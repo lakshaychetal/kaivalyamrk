@@ -52,7 +52,7 @@ export function Logo({ className }: LogoProps) {
         height={LOGO_INTRINSIC_HEIGHT}
         priority
         // Displayed size: preserve official proportions with `w-auto`.
-        className="h-9 w-auto md:h-11"
+        className="h-12 w-auto md:h-16"
       />
     </Link>
   );

@@ -60,7 +60,7 @@ export function SiteHeader({ className }: SiteHeaderProps) {
         .filter(Boolean)
         .join(" ")}
     >
-      <div className="relative mx-auto flex min-h-16 max-w-[1440px] items-center justify-between gap-4 px-4 md:px-6">
+      <div className="relative mx-auto flex min-h-16 max-w-[1440px] items-center justify-between gap-4 px-4 md:min-h-20 md:px-6">
         <Logo />
 
         {/* Desktop primary navigation — visible at ≥ tablet (md = 768px). */}

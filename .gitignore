@@ -24,8 +24,10 @@
 /build
 
 # generated asset pipeline output (responsive variants + typed catalogs)
-/public/generated
-/src/content/generated
+# Kept in git so Vercel/CI can build without re-running sharp image encoding.
+# Run `npm run build:assets` locally when source images in kaivalyam_assets/ change.
+# /public/generated   ← tracked
+# /src/content/generated ← tracked
 
 # misc
 .DS_Store

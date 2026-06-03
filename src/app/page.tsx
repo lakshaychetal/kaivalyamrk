@@ -57,6 +57,7 @@ import { cn } from "@/components/ui/cn";
 import { focusRing } from "@/components/ui/buttonStyles";
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
+import { VirtualTour } from "@/components/sections/VirtualTour";
 import { WhatsAppEntryPoint } from "@/integration/whatsapp/WhatsAppEntryPoint";
 import { rooms } from "@/content/rooms";
 import { facilities } from "@/content/facilities";
@@ -417,7 +418,14 @@ export default function HomePage() {
       <FacilitiesSection />
 
       {/*
-       * 5. Reviews preview (Req 2.6) — reusable ReviewsSection with limit=3
+       * 5. Virtual Tour — walk through the 9 property areas before deciding
+       *    to book. Sits on bg-surface for contrast after the alt-surface
+       *    Facilities section, and pairs naturally with the gallery link below.
+       */}
+      <VirtualTour headingLevel={2} />
+
+      {/*
+       * 6. Reviews preview (Req 2.6) — reusable ReviewsSection with limit=3
        *    and a "Read all reviews" link to /reviews (Req 11.3).
        */}
       <ReviewsSection
@@ -426,10 +434,10 @@ export default function HomePage() {
         viewAllHref="/reviews"
         headingLevel={2}
         id="reviews-preview"
-        className="bg-surface"
+        className="bg-surface-alt"
       />
 
-      {/* 6. WhatsApp entry point (Req 2.7, 16.2) */}
+      {/* 7. WhatsApp entry point (Req 2.7, 16.2) */}
       <WhatsAppSection />
     </>
   );

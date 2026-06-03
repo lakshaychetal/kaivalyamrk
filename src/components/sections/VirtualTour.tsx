@@ -26,7 +26,8 @@
 "use client";
 
 import { useState, useCallback, type ReactElement } from "react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Images } from "lucide-react";
+import Link from "next/link";
 
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { IconButton } from "@/components/ui/Button";
@@ -134,9 +135,17 @@ export function VirtualTour({
   const currentIndex = order.indexOf(currentCategory);
   const label = getCategoryLabel(currentCategory);
 
-  // Representative photo: first photo in the current category
+  // Representative photo for each category.
+  // For night_ambiance we specifically use full_property_night_overview (the
+  // wide panoramic shot) rather than the first photo in the list, as it reads
+  // better at the 16:9 tour card aspect ratio.
   const categoryPhotos = filterByCategory(photoCatalog, currentCategory);
-  const representativePhoto = categoryPhotos[0] ?? null;
+  const representativePhoto =
+    currentCategory === "night_ambiance"
+      ? (categoryPhotos.find(
+          (p) => p.id === "night_ambiance__full_property_night_overview",
+        ) ?? categoryPhotos[0] ?? null)
+      : (categoryPhotos[0] ?? null);
 
   const Heading = `h${headingLevel}` as "h2" | "h3";
   const headingId = "virtual-tour-heading";
@@ -145,7 +154,7 @@ export function VirtualTour({
   return (
     <section
       aria-labelledby={headingId}
-      className="bg-surface-alt"
+      className="bg-surface"
     >
       <div className="mx-auto w-full max-w-5xl px-4 py-12 md:px-6 md:py-16">
         {/* Section header */}
@@ -245,6 +254,22 @@ export function VirtualTour({
               size="md"
             />
           </div>
+        </div>
+
+        {/* Link to full gallery */}
+        <div className="mt-6">
+          <Link
+            href="/gallery"
+            className={cn(
+              "inline-flex min-h-11 items-center gap-2 rounded-lg px-1 py-2",
+              "font-medium text-primary underline-offset-4 hover:underline",
+              "motion-safe:transition-colors motion-safe:duration-200",
+              focusRing,
+            )}
+          >
+            <Images size={16} aria-hidden />
+            Browse the full gallery
+          </Link>
         </div>
       </div>
     </section>

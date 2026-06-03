@@ -23,7 +23,6 @@
 import type { Metadata } from "next";
 
 import { GalleryGrid } from "@/components/sections/GalleryGrid";
-import { VirtualTour } from "@/components/sections/VirtualTour";
 import { buildPageMeta } from "@/domain/seo/seo";
 
 // ---------------------------------------------------------------------------
@@ -41,17 +40,12 @@ export default function GalleryPage() {
     <>
       {/*
        * Visually hidden h1 for screen readers and the document outline.
-       * The GalleryGrid renders its own h2 "Photo Gallery" and VirtualTour
-       * renders its own h2 "Virtual Tour", so the outline is:
-       *   h1 (this) → h2 (GalleryGrid) → h2 (VirtualTour)
+       * The GalleryGrid renders its own h2 "Photo Gallery".
        */}
       <h1 className="sr-only">Gallery — Kaivalyam Homestay</h1>
 
-      {/* 1. Filterable photo grid (Req 6.1–6.4, 6.7) */}
+      {/* Filterable photo grid with lightbox (Req 6.1–6.4, 6.7) */}
       <GalleryGrid headingLevel={2} />
-
-      {/* 2. Virtual tour stepping through categories in sequence (Req 6.6) */}
-      <VirtualTour headingLevel={2} />
     </>
   );
 }

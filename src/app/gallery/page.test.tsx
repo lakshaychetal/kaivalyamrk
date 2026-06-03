@@ -459,12 +459,15 @@ describe("VirtualTour", () => {
 
   it("renders a representative photo for the current category", () => {
     render(<VirtualTour />);
-    // The first night_ambiance photo should be rendered
+    // For night_ambiance, the virtual tour uses full_property_night_overview
+    // as the representative photo (not index [0]).
     const nightAmbiancePhotos = filterByCategory(photoCatalog, "night_ambiance");
-    const firstPhoto = nightAmbiancePhotos[0];
-    if (firstPhoto) {
-      // The image should be in the document with the correct alt text
-      const img = screen.getByAltText(firstPhoto.alt);
+    const representativePhoto =
+      nightAmbiancePhotos.find(
+        (p) => p.id === "night_ambiance__full_property_night_overview",
+      ) ?? nightAmbiancePhotos[0];
+    if (representativePhoto) {
+      const img = screen.getByAltText(representativePhoto.alt);
       expect(img).toBeInTheDocument();
     }
   });

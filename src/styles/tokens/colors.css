@@ -1,0 +1,73 @@
+/*
+ * Semantic color tokens — Kaivalyam Design System
+ * ------------------------------------------------
+ * These are registered in Tailwind's `--color-*` theme namespace so that the
+ * SEMANTIC token name (e.g. `bg-surface`, `text-on-surface`, `bg-primary`)
+ * drives every color utility. Components MUST consume these utilities and MUST
+ * NOT use raw hex / arbitrary color values.
+ *
+ * BRAND SOURCE — sampled from `Kaivalyam Logo apvd.png` (task 2.1):
+ *   • brown wordmark : #a67c52  rgb(166,124,82)  (warm taupe / bark)
+ *   • leaf green     : #7ac943  rgb(122,201,67)  (fresh leaf)
+ * The logo hues are light, so the palette below keeps their character but
+ * shifts lightness until EVERY foreground/background pair meets WCAG AA.
+ *
+ * WCAG AA VERIFICATION (computed via scripts/verify_contrast.py — single
+ * source of truth mirrored in src/domain/design/tokens.ts; all pairs PASS):
+ *   normal text  ≥ 4.5:1   |   large text / non-text (UI) ≥ 3:1
+ *
+ *   on-surface        on surface       15.58:1  (normal)  PASS
+ *   on-surface-muted  on surface        7.27:1  (normal)  PASS
+ *   on-surface        on surface-alt   13.55:1  (normal)  PASS
+ *   on-surface-muted  on surface-alt    6.33:1  (normal)  PASS
+ *   on-primary        on primary        6.49:1  (normal)  PASS
+ *   on-primary        on primary-hover  9.20:1  (normal)  PASS
+ *   secondary (head)  on surface        8.93:1  (normal)  PASS
+ *   secondary (head)  on surface-alt    7.77:1  (normal)  PASS
+ *   primary (lg/icon) on surface        6.02:1  (large)   PASS
+ *   primary (lg/icon) on surface-alt    5.24:1  (large)   PASS
+ *   accent  (lg/icon) on surface        4.72:1  (large)   PASS
+ *   focus ring        on surface        6.31:1  (non-text) PASS
+ *   focus ring        on surface-alt    5.49:1  (non-text) PASS
+ *   border            on surface        3.75:1  (non-text) PASS
+ *   success           on surface        6.07:1  (normal)  PASS
+ *   error             on surface        6.07:1  (normal)  PASS
+ *
+ * Focus ring is drawn as an OFFSET outline (a surface-colored gap separates it
+ * from the focused control), so its contrast is evaluated against the surface
+ * (6.31:1) — not against the button it surrounds.
+ */
+@theme {
+  /* Brand — earthy leaf green (primary brand + the single primary CTA).
+     Derived from logo green #7ac943, darkened so white text clears 4.5:1. */
+  --color-primary: #356a23; /* on-primary (white) → 6.49:1 */
+  --color-primary-hover: #28511a; /* hover/active state → 9.20:1 with white */
+
+  /* Brand — warm earthy brown (bark): secondary accents, headings.
+     Derived from logo brown #a67c52, darkened for ≥4.5:1 as text on surface. */
+  --color-secondary: #5b3f25; /* heading text on surface → 8.93:1 */
+
+  /* Warm lantern gold: sparing highlights / large text / icons. */
+  --color-accent: #9a6212; /* large text/icon on surface → 4.72:1 */
+
+  /* Surfaces — warm sand / off-white */
+  --color-surface: #faf6ef; /* page + card background */
+  --color-surface-alt: #efe6d6; /* section banding */
+
+  /* On-surface text */
+  --color-on-surface: #241c14; /* body text → 15.58:1 on surface */
+  --color-on-surface-muted: #5c5042; /* secondary text → 7.27:1 on surface */
+
+  /* Text on the primary color */
+  --color-on-primary: #ffffff; /* white on primary → 6.49:1 */
+
+  /* Structure */
+  --color-border: #8d7c63; /* dividers, visible in light theme → 3.75:1 */
+
+  /* Focus ring — high-contrast amber, visible against surface (Req 22.3) */
+  --color-focus: #8a4b08; /* focus ring on surface → 6.31:1 */
+
+  /* Semantic feedback — always paired with icon/text, never color alone (Req 22.6) */
+  --color-success: #1f6b34; /* success text on surface → 6.07:1 */
+  --color-error: #b3261e; /* error text on surface → 6.07:1 */
+}

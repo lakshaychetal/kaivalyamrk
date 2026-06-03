@@ -1,0 +1,18 @@
+/*
+ * Semantic token layer — Kaivalyam Design System
+ * ----------------------------------------------
+ * Single entry point that aggregates the reserved token files. Each file
+ * registers tokens in a Tailwind `@theme` namespace so the SEMANTIC token name
+ * (not a raw hex) drives the generated utilities:
+ *
+ *   colors.css      -> --color-NAME      -> bg / text / border utilities
+ *   typography.css  -> --text / --font   -> text / font utilities
+ *   spacing.css     -> --spacing / --breakpoint -> p / m / gap + sm md lg xl
+ *
+ * This file is imported by `src/app/globals.css` after the Tailwind entry.
+ * Task 2.1 populates the real, logo-derived values into colors.css /
+ * typography.css; this layer is the stable home for those tokens.
+ */
+@import "./colors.css";
+@import "./typography.css";
+@import "./spacing.css";

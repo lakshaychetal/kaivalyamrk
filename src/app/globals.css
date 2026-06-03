@@ -1,0 +1,49 @@
+/*
+ * Global stylesheet — Kaivalyam Homestay Website
+ * ----------------------------------------------
+ * 1. `@import "tailwindcss"` pulls in Tailwind v4 (preflight + utilities).
+ * 2. The semantic token layer registers the design system's color / type /
+ *    spacing / breakpoint tokens in Tailwind's `@theme` namespaces, so that
+ *    SEMANTIC token names drive every utility (e.g. `bg-surface`,
+ *    `text-on-surface`, `bg-primary`, `p-4`, `md:`/`lg:` breakpoints).
+ *    Components consume those utilities — never raw hex / arbitrary values.
+ * 3. Base resets apply the body surface + on-surface tokens and the body font.
+ *
+ * Note: the token VALUES (colors, fonts) are PLACEHOLDERS populated with the
+ * logo-derived, WCAG-AA-verified palette in task 2.1. The token NAMES are the
+ * stable contract this file depends on.
+ */
+@import "tailwindcss";
+@import "../styles/tokens/index.css";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    /* Semantic tokens drive the base surface/text colors and body font. */
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.5;
+    font-weight: var(--font-weight-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

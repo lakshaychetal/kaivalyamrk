@@ -1,0 +1,60 @@
+/*
+ * Spacing & breakpoint tokens — Kaivalyam Design System
+ * -----------------------------------------------------
+ * Spacing follows a strict 4/8px system. Tailwind v4 derives its numeric
+ * spacing scale from the single `--spacing` base unit, so `p-1` = 4px,
+ * `p-2` = 8px, `p-4` = 16px, etc. Named step tokens are also exposed for
+ * semantic use and for tests to consume.
+ *
+ * Spacing scale (px): 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64
+ * Section vertical rhythm tiers: 16 / 24 / 32 / 48
+ *
+ * Breakpoints (Req 18.1): mobile 375 · tablet 768 · desktop 1024 · large 1440.
+ * Mobile-first; no horizontal scroll ≥375px; container max-width on desktop.
+ *
+ * Values here are structural (not brand-derived), so they are NOT placeholders —
+ * task 2.1 confirms/extends them alongside the color + type tokens.
+ *
+ * NOTE: only the single `--spacing` base unit and the `--breakpoint-*` tokens
+ * live inside `@theme`. The named step values are exposed as `--space-*` custom
+ * properties below (NOT `--spacing-*`) so they do not collide with Tailwind v4's
+ * `max-w-*` / `w-*` container utilities.
+ */
+@theme {
+  /* Base spacing unit — drives Tailwind's numeric scale (n × 0.25rem = n × 4px) */
+  --spacing: 0.25rem; /* 4px */
+
+  /* Breakpoint tokens — registered so `sm:`/`md:`/`lg:`/`xl:` map to the
+     design system's mobile/tablet/desktop/large tiers (Req 18.1). */
+  --breakpoint-sm: 375px; /* mobile */
+  --breakpoint-md: 768px; /* tablet */
+  --breakpoint-lg: 1024px; /* desktop */
+  --breakpoint-xl: 1440px; /* large desktop */
+}
+
+/*
+ * Named spacing steps (4/8px system) for SEMANTIC use in hand-authored CSS.
+ * ------------------------------------------------------------------------
+ * These are intentionally declared OUTSIDE `@theme` as plain custom
+ * properties. Tailwind v4 treats every `--spacing-*` key inside `@theme` as a
+ * member of the spacing scale that ALSO backs the width utilities, so naming
+ * them `--spacing-sm/md/lg/xl/2xl/3xl` previously HIJACKED `max-w-sm … max-w-3xl`
+ * (e.g. `max-w-md` resolved to 16px instead of Tailwind's 28rem container size),
+ * collapsing prose columns into one-word-per-line text. Declaring them here
+ * keeps the documented step values available via `var(--space-*)` without
+ * overriding any Tailwind `max-w-*` / `w-*` utility, which now correctly fall
+ * back to the default `--container-*` scale.
+ *
+ * Scale (px): 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (mirrors `spacingScale` in
+ * `src/domain/design/tokens.ts`).
+ */
+:root {
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 0.75rem; /* 12px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+}

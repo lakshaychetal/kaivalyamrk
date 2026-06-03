@@ -1,0 +1,49 @@
+/*
+ * Typography tokens — Kaivalyam Design System
+ * --------------------------------------------
+ * The type scale is registered in Tailwind's `--text-*` namespace so that
+ * `text-xs … text-5xl` resolve to the semantic scale below. Base body text is
+ * 16px (≥16px on mobile, Req 18.4) with comfortable body line-height.
+ *
+ * Type scale (px): 12 · 14 · 16 · 18 · 24 · 32 · 48  (base body 16)
+ * Line-height: 1.5–1.75 for body; tighter for large headings.
+ * Weights: 400 body · 500 labels · 600–700 headings.
+ *
+ * FONT PAIRING (task 2.1):
+ *   • Headings — Fraunces (elegant humanist serif), loaded via `next/font`
+ *     in src/app/layout.tsx and exposed as `--font-fraunces`.
+ *   • Body — Source Sans 3 (legible humanist sans), exposed as
+ *     `--font-source-sans`. Both use `font-display: swap`.
+ *   `--font-sans` / `--font-serif` resolve to those families with safe
+ *   system fallbacks so text renders immediately while the webfont swaps in.
+ */
+@theme {
+  /* Font families — next/font variables (set on <html> in layout.tsx) with
+     graceful system fallbacks. `--font-serif` → headings, `--font-sans` → body. */
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* body */
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif; /* headings */
+
+  /* Type scale — name → [font-size, line-height] */
+  --text-xs: 0.75rem; /* 12px */
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem; /* 16px — base body */
+  --text-base--line-height: 1.6;
+  --text-lg: 1.125rem; /* 18px */
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.5rem; /* 24px */
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2rem; /* 32px */
+  --text-2xl--line-height: 1.25;
+  --text-3xl: 3rem; /* 48px */
+  --text-3xl--line-height: 1.15;
+
+  /* Font weights — semantic roles */
+  --font-weight-body: 400;
+  --font-weight-label: 500;
+  --font-weight-heading: 600;
+  --font-weight-heading-strong: 700;
+}

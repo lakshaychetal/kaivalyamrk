@@ -266,10 +266,10 @@ export const attractions: AttractionItem[] = [
     "category": "mountain_sites",
     "image": {
       "id": "mountain_sites__cheengeri_rock",
-      "src": "/generated/attractions/c_mountain_sites/cheengeri_rock-1200.jpg",
+      "src": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.jpg",
       "alt": "Cheengeri Rock — Mountain Sites near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 2241,
+      "width": 739,
+      "height": 416,
       "source": "wikimedia",
       "attribution": {
         "author": "Vinayaraj (Wikimedia Commons)",

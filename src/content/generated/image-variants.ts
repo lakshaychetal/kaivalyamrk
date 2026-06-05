@@ -173,6 +173,30 @@ export const imageVariants: ImageVariantMap = {
     ],
     "sizes": "100vw"
   },
+  "night_ambiance__kaivalyam_essence": {
+    "id": "night_ambiance__kaivalyam_essence",
+    "src": "/generated/property/night_ambiance/kaivalyam_essence-275.jpg",
+    "width": 275,
+    "height": 182,
+    "widths": [
+      275
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/night_ambiance/kaivalyam_essence-275.avif 275w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/night_ambiance/kaivalyam_essence-275.webp 275w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/night_ambiance/kaivalyam_essence-275.jpg 275w"
+      }
+    ],
+    "sizes": "100vw"
+  },
   "night_ambiance__lit_pathway_serene": {
     "id": "night_ambiance__lit_pathway_serene",
     "src": "/generated/property/night_ambiance/lit_pathway_serene-1600.jpg",
@@ -524,6 +548,270 @@ export const imageVariants: ImageVariantMap = {
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
+  "outdoor_living__food_dosa": {
+    "id": "outdoor_living__food_dosa",
+    "src": "/generated/property/outdoor_living/food_dosa-137.jpg",
+    "width": 137,
+    "height": 140,
+    "widths": [
+      137
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_dosa-137.avif 137w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_dosa-137.webp 137w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_dosa-137.jpg 137w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_fish_fry": {
+    "id": "outdoor_living__food_fish_fry",
+    "src": "/generated/property/outdoor_living/food_fish_fry-174.jpg",
+    "width": 174,
+    "height": 160,
+    "widths": [
+      174
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.avif 174w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.webp 174w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.jpg 174w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_fish_fry2": {
+    "id": "outdoor_living__food_fish_fry2",
+    "src": "/generated/property/outdoor_living/food_fish_fry2-168.jpg",
+    "width": 168,
+    "height": 163,
+    "widths": [
+      168
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.avif 168w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.webp 168w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.jpg 168w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_idiappam": {
+    "id": "outdoor_living__food_idiappam",
+    "src": "/generated/property/outdoor_living/food_idiappam-136.jpg",
+    "width": 136,
+    "height": 159,
+    "widths": [
+      136
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.avif 136w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.webp 136w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.jpg 136w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_idli_vada": {
+    "id": "outdoor_living__food_idli_vada",
+    "src": "/generated/property/outdoor_living/food_idli_vada-172.jpg",
+    "width": 172,
+    "height": 129,
+    "widths": [
+      172
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.avif 172w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.webp 172w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.jpg 172w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_meals": {
+    "id": "outdoor_living__food_meals",
+    "src": "/generated/property/outdoor_living/food_meals-126.jpg",
+    "width": 126,
+    "height": 138,
+    "widths": [
+      126
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_meals-126.avif 126w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_meals-126.webp 126w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_meals-126.jpg 126w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_medu_vada": {
+    "id": "outdoor_living__food_medu_vada",
+    "src": "/generated/property/outdoor_living/food_medu_vada-82.jpg",
+    "width": 82,
+    "height": 129,
+    "widths": [
+      82
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.avif 82w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.webp 82w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.jpg 82w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_mutton_curry": {
+    "id": "outdoor_living__food_mutton_curry",
+    "src": "/generated/property/outdoor_living/food_mutton_curry-131.jpg",
+    "width": 131,
+    "height": 131,
+    "widths": [
+      131
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.avif 131w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.webp 131w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.jpg 131w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_parippu_vada": {
+    "id": "outdoor_living__food_parippu_vada",
+    "src": "/generated/property/outdoor_living/food_parippu_vada-269.jpg",
+    "width": 269,
+    "height": 299,
+    "widths": [
+      269
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.avif 269w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.webp 269w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.jpg 269w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_puttu": {
+    "id": "outdoor_living__food_puttu",
+    "src": "/generated/property/outdoor_living/food_puttu-202.jpg",
+    "width": 202,
+    "height": 140,
+    "widths": [
+      202
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_puttu-202.avif 202w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_puttu-202.webp 202w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_puttu-202.jpg 202w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_puttu2": {
+    "id": "outdoor_living__food_puttu2",
+    "src": "/generated/property/outdoor_living/food_puttu2-202.jpg",
+    "width": 202,
+    "height": 140,
+    "widths": [
+      202
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.avif 202w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.webp 202w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.jpg 202w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
   "outdoor_living__hanging_bells_windchimes": {
     "id": "outdoor_living__hanging_bells_windchimes",
     "src": "/generated/property/outdoor_living/hanging_bells_windchimes-1600.jpg",
@@ -848,6 +1136,78 @@ export const imageVariants: ImageVariantMap = {
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
+  "interiors__classic_room_pic1": {
+    "id": "interiors__classic_room_pic1",
+    "src": "/generated/property/interiors/classic_room_pic1-400.jpg",
+    "width": 509,
+    "height": 339,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/classic_room_pic1-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/classic_room_pic1-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/classic_room_pic1-400.jpg 400w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__classic_room_pic2": {
+    "id": "interiors__classic_room_pic2",
+    "src": "/generated/property/interiors/classic_room_pic2-400.jpg",
+    "width": 717,
+    "height": 478,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/classic_room_pic2-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/classic_room_pic2-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/classic_room_pic2-400.jpg 400w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__classic_room_pic3": {
+    "id": "interiors__classic_room_pic3",
+    "src": "/generated/property/interiors/classic_room_pic3-319.jpg",
+    "width": 319,
+    "height": 478,
+    "widths": [
+      319
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/classic_room_pic3-319.avif 319w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/classic_room_pic3-319.webp 319w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/classic_room_pic3-319.jpg 319w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
   "interiors__duplex_bedroom_sofa": {
     "id": "interiors__duplex_bedroom_sofa",
     "src": "/generated/property/interiors/duplex_bedroom_sofa-1600.jpg",
@@ -952,6 +1312,102 @@ export const imageVariants: ImageVariantMap = {
       {
         "type": "image/jpeg",
         "srcSet": "/generated/property/interiors/living_room_tv_unit-400.jpg 400w, /generated/property/interiors/living_room_tv_unit-800.jpg 800w, /generated/property/interiors/living_room_tv_unit-1200.jpg 1200w, /generated/property/interiors/living_room_tv_unit-1600.jpg 1600w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__luxury_cottage_pic1": {
+    "id": "interiors__luxury_cottage_pic1",
+    "src": "/generated/property/interiors/luxury_cottage_pic1-400.jpg",
+    "width": 663,
+    "height": 442,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic1-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic1-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic1-400.jpg 400w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__luxury_cottage_pic2": {
+    "id": "interiors__luxury_cottage_pic2",
+    "src": "/generated/property/interiors/luxury_cottage_pic2-400.jpg",
+    "width": 690,
+    "height": 460,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic2-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic2-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic2-400.jpg 400w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__luxury_cottage_pic3": {
+    "id": "interiors__luxury_cottage_pic3",
+    "src": "/generated/property/interiors/luxury_cottage_pic3-400.jpg",
+    "width": 539,
+    "height": 359,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic3-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic3-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic3-400.jpg 400w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "interiors__luxury_cottage_pic4": {
+    "id": "interiors__luxury_cottage_pic4",
+    "src": "/generated/property/interiors/luxury_cottage_pic4-400.jpg",
+    "width": 477,
+    "height": 318,
+    "widths": [
+      400
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic4-400.avif 400w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic4-400.webp 400w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/interiors/luxury_cottage_pic4-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -1621,26 +2077,24 @@ export const imageVariants: ImageVariantMap = {
   },
   "mountain_sites__cheengeri_rock": {
     "id": "mountain_sites__cheengeri_rock",
-    "src": "/generated/attractions/c_mountain_sites/cheengeri_rock-1200.jpg",
-    "width": 1280,
-    "height": 2241,
+    "src": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.jpg",
+    "width": 739,
+    "height": 416,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.avif 400w, /generated/attractions/c_mountain_sites/cheengeri_rock-800.avif 800w, /generated/attractions/c_mountain_sites/cheengeri_rock-1200.avif 1200w"
+        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.webp 400w, /generated/attractions/c_mountain_sites/cheengeri_rock-800.webp 800w, /generated/attractions/c_mountain_sites/cheengeri_rock-1200.webp 1200w"
+        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.jpg 400w, /generated/attractions/c_mountain_sites/cheengeri_rock-800.jpg 800w, /generated/attractions/c_mountain_sites/cheengeri_rock-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/c_mountain_sites/cheengeri_rock-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

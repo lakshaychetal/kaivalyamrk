@@ -73,12 +73,14 @@ const CLASSIC_ROOM_PHOTO_CATEGORIES: readonly PhotoCategoryId[] = [
 const MAX_PHOTOS_PER_ROOM = 4;
 
 /**
- * Collect up to `max` photos from the given category list, drawing from each
- * category in order. Uses the pure `filterByCategory` domain helper (task 7.1).
+ * Collect up to `max` photos for a room. Photos whose id contains the
+ * `preferredPrefix` are sorted to the front so the new room-specific images
+ * (luxury_cottage_picN, classic_room_picN) always lead over generic ones.
  */
 function collectRoomPhotos(
   categories: readonly PhotoCategoryId[],
   max: number,
+  preferredPrefix: string,
 ): Photo[] {
   const collected: Photo[] = [];
   for (const categoryId of categories) {
@@ -87,17 +89,23 @@ function collectRoomPhotos(
     const remaining = max - collected.length;
     collected.push(...photos.slice(0, remaining));
   }
-  return collected;
+  // Sort: preferred (room-specific) photos first, others after
+  return [
+    ...collected.filter((p) => p.id.includes(preferredPrefix)),
+    ...collected.filter((p) => !p.id.includes(preferredPrefix)),
+  ].slice(0, max);
 }
 
 const luxuryCottagePhotos = collectRoomPhotos(
   LUXURY_COTTAGE_PHOTO_CATEGORIES,
   MAX_PHOTOS_PER_ROOM,
+  "luxury_cottage",
 );
 
 const classicRoomPhotos = collectRoomPhotos(
   CLASSIC_ROOM_PHOTO_CATEGORIES,
   MAX_PHOTOS_PER_ROOM,
+  "classic_room",
 );
 
 // ---------------------------------------------------------------------------

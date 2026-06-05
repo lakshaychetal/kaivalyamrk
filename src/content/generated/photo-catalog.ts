@@ -18,6 +18,15 @@ export const photoCatalog: PhotoCatalog = {
       "order": 0,
       "photos": [
         {
+          "id": "night_ambiance__blue_canopy_dusk",
+          "src": "/generated/property/night_ambiance/blue_canopy_dusk-1600.jpg",
+          "alt": "Blue Canopy Dusk — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 4608,
+          "height": 3072,
+          "source": "owned",
+          "category": "night_ambiance"
+        },
+        {
           "id": "night_ambiance__building_night_hero",
           "src": "/generated/property/night_ambiance/building_night_hero-1600.jpg",
           "alt": "Building Night Hero — Kaivalyam Homestay, Padichira, Wayanad",
@@ -59,6 +68,15 @@ export const photoCatalog: PhotoCatalog = {
           "alt": "Gazebo Golden Light — Kaivalyam Homestay, Padichira, Wayanad",
           "width": 4608,
           "height": 3072,
+          "source": "owned",
+          "category": "night_ambiance"
+        },
+        {
+          "id": "night_ambiance__kaivalyam_essence",
+          "src": "/generated/property/night_ambiance/kaivalyam_essence-275.jpg",
+          "alt": "Kaivalyam Essence — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 275,
+          "height": 182,
           "source": "owned",
           "category": "night_ambiance"
         },
@@ -194,6 +212,105 @@ export const photoCatalog: PhotoCatalog = {
           "category": "outdoor_living"
         },
         {
+          "id": "outdoor_living__food_dosa",
+          "src": "/generated/property/outdoor_living/food_dosa-137.jpg",
+          "alt": "Food Dosa — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 137,
+          "height": 140,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_fish_fry",
+          "src": "/generated/property/outdoor_living/food_fish_fry-174.jpg",
+          "alt": "Food Fish Fry — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 174,
+          "height": 160,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_fish_fry2",
+          "src": "/generated/property/outdoor_living/food_fish_fry2-168.jpg",
+          "alt": "Food Fish Fry2 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 168,
+          "height": 163,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_idiappam",
+          "src": "/generated/property/outdoor_living/food_idiappam-136.jpg",
+          "alt": "Food Idiappam — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 136,
+          "height": 159,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_idli_vada",
+          "src": "/generated/property/outdoor_living/food_idli_vada-172.jpg",
+          "alt": "Food Idli Vada — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 172,
+          "height": 129,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_meals",
+          "src": "/generated/property/outdoor_living/food_meals-126.jpg",
+          "alt": "Food Meals — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 126,
+          "height": 138,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_medu_vada",
+          "src": "/generated/property/outdoor_living/food_medu_vada-82.jpg",
+          "alt": "Food Medu Vada — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 82,
+          "height": 129,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_mutton_curry",
+          "src": "/generated/property/outdoor_living/food_mutton_curry-131.jpg",
+          "alt": "Food Mutton Curry — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 131,
+          "height": 131,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_parippu_vada",
+          "src": "/generated/property/outdoor_living/food_parippu_vada-269.jpg",
+          "alt": "Food Parippu Vada — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 269,
+          "height": 299,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_puttu",
+          "src": "/generated/property/outdoor_living/food_puttu-202.jpg",
+          "alt": "Food Puttu — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 202,
+          "height": 140,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
+          "id": "outdoor_living__food_puttu2",
+          "src": "/generated/property/outdoor_living/food_puttu2-202.jpg",
+          "alt": "Food Puttu2 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 202,
+          "height": 140,
+          "source": "owned",
+          "category": "outdoor_living"
+        },
+        {
           "id": "outdoor_living__hanging_bells_windchimes",
           "src": "/generated/property/outdoor_living/hanging_bells_windchimes-1600.jpg",
           "alt": "Hanging Bells Windchimes — Kaivalyam Homestay, Padichira, Wayanad",
@@ -316,6 +433,33 @@ export const photoCatalog: PhotoCatalog = {
           "category": "interiors"
         },
         {
+          "id": "interiors__classic_room_pic1",
+          "src": "/generated/property/interiors/classic_room_pic1-400.jpg",
+          "alt": "Classic Room Pic1 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 509,
+          "height": 339,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__classic_room_pic2",
+          "src": "/generated/property/interiors/classic_room_pic2-400.jpg",
+          "alt": "Classic Room Pic2 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 717,
+          "height": 478,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__classic_room_pic3",
+          "src": "/generated/property/interiors/classic_room_pic3-319.jpg",
+          "alt": "Classic Room Pic3 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 319,
+          "height": 478,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
           "id": "interiors__duplex_bedroom_sofa",
           "src": "/generated/property/interiors/duplex_bedroom_sofa-1600.jpg",
           "alt": "Duplex Bedroom Sofa — Kaivalyam Homestay, Padichira, Wayanad",
@@ -348,6 +492,42 @@ export const photoCatalog: PhotoCatalog = {
           "alt": "Living Room Tv Unit — Kaivalyam Homestay, Padichira, Wayanad",
           "width": 4608,
           "height": 3072,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__luxury_cottage_pic1",
+          "src": "/generated/property/interiors/luxury_cottage_pic1-400.jpg",
+          "alt": "Luxury Cottage Pic1 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 663,
+          "height": 442,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__luxury_cottage_pic2",
+          "src": "/generated/property/interiors/luxury_cottage_pic2-400.jpg",
+          "alt": "Luxury Cottage Pic2 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 690,
+          "height": 460,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__luxury_cottage_pic3",
+          "src": "/generated/property/interiors/luxury_cottage_pic3-400.jpg",
+          "alt": "Luxury Cottage Pic3 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 539,
+          "height": 359,
+          "source": "owned",
+          "category": "interiors"
+        },
+        {
+          "id": "interiors__luxury_cottage_pic4",
+          "src": "/generated/property/interiors/luxury_cottage_pic4-400.jpg",
+          "alt": "Luxury Cottage Pic4 — Kaivalyam Homestay, Padichira, Wayanad",
+          "width": 477,
+          "height": 318,
           "source": "owned",
           "category": "interiors"
         },
@@ -508,6 +688,15 @@ export const photoCatalog: PhotoCatalog = {
  */
 export const heroPhotos: Photo[] = [
   {
+    "id": "night_ambiance__blue_canopy_dusk",
+    "src": "/generated/property/night_ambiance/blue_canopy_dusk-1600.jpg",
+    "alt": "Blue Canopy Dusk — Kaivalyam Homestay, Padichira, Wayanad",
+    "width": 4608,
+    "height": 3072,
+    "source": "owned",
+    "category": "night_ambiance"
+  },
+  {
     "id": "night_ambiance__building_night_hero",
     "src": "/generated/property/night_ambiance/building_night_hero-1600.jpg",
     "alt": "Building Night Hero — Kaivalyam Homestay, Padichira, Wayanad",
@@ -553,6 +742,15 @@ export const heroPhotos: Photo[] = [
     "category": "night_ambiance"
   },
   {
+    "id": "night_ambiance__kaivalyam_essence",
+    "src": "/generated/property/night_ambiance/kaivalyam_essence-275.jpg",
+    "alt": "Kaivalyam Essence — Kaivalyam Homestay, Padichira, Wayanad",
+    "width": 275,
+    "height": 182,
+    "source": "owned",
+    "category": "night_ambiance"
+  },
+  {
     "id": "night_ambiance__lit_pathway_serene",
     "src": "/generated/property/night_ambiance/lit_pathway_serene-1600.jpg",
     "alt": "Lit Pathway Serene — Kaivalyam Homestay, Padichira, Wayanad",
@@ -583,11 +781,13 @@ export const heroPhotos: Photo[] = [
 
 /** Ids of the hero candidates, for quick membership checks. */
 export const heroPhotoIds: readonly string[] = [
+  "night_ambiance__blue_canopy_dusk",
   "night_ambiance__building_night_hero",
   "night_ambiance__entrance_pathway_dusk",
   "night_ambiance__full_property_night_overview",
   "night_ambiance__garden_warm_ambient",
   "night_ambiance__gazebo_golden_light",
+  "night_ambiance__kaivalyam_essence",
   "night_ambiance__lit_pathway_serene",
   "night_ambiance__property_panoramic_night",
   "night_ambiance__seating_lantern_warm"

@@ -69,19 +69,15 @@ const DINING_ICONS: Record<string, LucideIcon> = {
 
 /**
  * The photos that illustrate the dining experience (Req 8.3).
- *
- * Derived at build time from the `outdoor_living` gallery category — the
- * property's open-air dining areas, garden tables, covered seating, and gazebo
- * — so the imagery stays in lock-step with the asset pipeline (alt text and
- * intrinsic dimensions come straight from the catalog; nothing is hard-coded).
- * Dining-named photos are surfaced first so the most on-topic images lead.
+ * Food dish photos (id starts with food_) are surfaced first, followed
+ * by the outdoor dining-area shots, so visitors see the Malayali dishes
+ * prominently as requested.
  */
 export function selectDiningPhotos(): Photo[] {
   const outdoorLiving = filterByCategory(photoCatalog, "outdoor_living");
-  return [...outdoorLiving].sort((a, b) => {
-    const score = (photo: Photo) => (/dining/.test(photo.id) ? 0 : 1);
-    return score(a) - score(b);
-  });
+  const food = outdoorLiving.filter((p) => p.id.includes("food_"));
+  const venue = outdoorLiving.filter((p) => !p.id.includes("food_"));
+  return [...food, ...venue];
 }
 
 const diningPhotos = selectDiningPhotos();

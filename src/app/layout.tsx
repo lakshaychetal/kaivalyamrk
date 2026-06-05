@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
 import { AnalyticsProvider } from "@/components/layout/AnalyticsProvider";
+import { AmbientPlayer } from "@/components/layout/AmbientPlayer";
 import { LodgingBusinessJsonLd } from "@/domain/seo/seo";
 
 /**
@@ -106,6 +107,13 @@ export default function RootLayout({
          * ingestion endpoint. Renders nothing — pure side-effect island.
          */}
         <AnalyticsProvider />
+
+        {/*
+         * Ambient music player — a small floating mute/unmute button that lets
+         * visitors play soft instrumental background music across all pages.
+         * Starts muted (browser autoplay policy); user unmutes on first click.
+         */}
+        <AmbientPlayer />
       </body>
     </html>
   );

@@ -100,11 +100,17 @@ const illustrativePhotos: Photo[] = ILLUSTRATIVE_CATEGORIES.map(
 ).filter((photo): photo is Photo => photo !== undefined);
 
 /**
- * A single featured image for the About header band. Prefer an evocative
- * night-ambiance or exterior shot; fall back to the first illustrative photo so
- * the header always has imagery (and never ships a missing asset).
+ * A single featured image for the About header band. Prefer kaivalyam_essence
+ * (the "essence of solitude" image provided by the client); fall back to
+ * building_night_hero, then the first night_ambiance photo.
  */
 const headerPhoto: Photo | undefined =
+  filterByCategory(photoCatalog, "night_ambiance").find(
+    (p) => p.id === "night_ambiance__kaivalyam_essence",
+  ) ??
+  filterByCategory(photoCatalog, "night_ambiance").find(
+    (p) => p.id === "night_ambiance__building_night_hero",
+  ) ??
   filterByCategory(photoCatalog, "night_ambiance")[0] ??
   filterByCategory(photoCatalog, "exteriors")[0] ??
   illustrativePhotos[0];
@@ -188,8 +194,8 @@ export default function AboutPage() {
             About Kaivalyam
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
-            A pet-friendly, tranquil hill-village homestay in Padichira, Wayanad
-            — and the philosophy, place, and people behind it.
+            A tranquil hill-village homestay in Padichira, Wayanad — the
+            philosophy, place, and people behind it.
           </p>
           <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white/90 backdrop-blur-sm">
             <Icon icon={Leaf} size="sm" aria-hidden className="text-white" />

@@ -126,7 +126,7 @@ export const PAGE_META_REGISTRY: Readonly<Record<PageKey, PageMetaSource>> = {
     path: '/',
     title: 'Kaivalyam Homestay — Experience Serene Solitude in Wayanad',
     description:
-      'A pet-friendly hill-village homestay in Padichira, Wayanad, Kerala. Wake to misted hills, birdsong, and the calm of true seclusion — Kaivalyam means liberation of the soul.',
+      'A hill-village homestay in Padichira, Wayanad, Kerala. Wake to misted hills, birdsong, and the calm of true seclusion — Kaivalyam means liberation of the soul.',
   },
   about: {
     path: '/about',
@@ -144,7 +144,7 @@ export const PAGE_META_REGISTRY: Readonly<Record<PageKey, PageMetaSource>> = {
     path: '/facilities',
     title: 'Facilities & Amenities | Kaivalyam Homestay',
     description:
-      'Explore the amenities at Kaivalyam Homestay — private sit-outs, garden pathways, a reading library, play areas, and more, all designed for a restful, pet-friendly stay.',
+      'Explore the amenities at Kaivalyam Homestay — private sit-outs, garden pathways, a reading library, play areas, and more, all designed for a restful, unhurried stay.',
   },
   gallery: {
     path: '/gallery',

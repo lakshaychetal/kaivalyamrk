@@ -33,7 +33,7 @@ export const facilities: readonly Facility[] = [
     id: 'home-cooked-cuisine',
     name: 'Home-Cooked Local Cuisine',
     description:
-      'Authentic Malayali meals cooked in our kitchen with local produce — warm, unhurried food that tastes of Wayanad. Vegetarian and non-vegetarian on request.',
+      'Authentic Malayali meals cooked in our kitchen with local organic produce — food that tastes of Wayanad. Vegetarian and non-vegetarian on request.',
     icon: 'utensils',
   },
   {
@@ -54,7 +54,7 @@ export const facilities: readonly Facility[] = [
     id: 'childrens-play-area',
     name: "Children's Play Area",
     description:
-      'A dedicated indoor play area keeps younger guests happily occupied, making Kaivalyam an easy, relaxed choice for families.',
+      'A dedicated play area keeps younger guests happily occupied, making Kaivalyam an easy, relaxed choice for families.',
     icon: 'baby',
   },
   {

@@ -30,7 +30,7 @@ describe("Cuisine page (Req 8.1, 8.2, 8.3)", () => {
       screen.getAllByRole("heading", { level: 1 }),
     ).toHaveLength(1);
     expect(
-      screen.getByRole("heading", { level: 1, name: /cuisine/i }),
+      screen.getByRole("heading", { level: 1, name: /inhouse dining/i }),
     ).toBeInTheDocument();
   });
 

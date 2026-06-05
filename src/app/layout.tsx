@@ -37,11 +37,11 @@ const fontSans = Source_Sans_3({
  */
 export const metadata: Metadata = {
   title: {
-    default: "Kaivalyam Homestay — Experience Absolute Solitude",
+    default: "Kaivalyam Homestay — Experience Serene Solitude",
     template: "%s · Kaivalyam Homestay",
   },
   description:
-    "A pet-friendly, tranquil hill-village homestay in Padichira, Wayanad, Kerala. Experience absolute solitude. #KAIVALYAM",
+    "A tranquil hill-village homestay in Padichira, Wayanad, Kerala. Experience serene solitude. #KAIVALYAM",
 };
 
 /**

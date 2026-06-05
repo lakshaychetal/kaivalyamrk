@@ -205,8 +205,8 @@ function HeroSection() {
         </h1>
 
         <p className="max-w-md text-base leading-relaxed text-white/90 sm:text-lg">
-          A pet-friendly, tranquil hill-village homestay where solitude,
-          nature, and warm Malayali hospitality come together.
+          A tranquil hill-village homestay where solitude, nature, and warm
+          Malayali hospitality come together.
         </p>
 
         {/* Primary Book Now CTA (Req 2.2) — the single primary-CTA style */}
@@ -240,12 +240,12 @@ function PhilosophySection() {
             undisturbed stillness. It is the name we chose because it is
             exactly what this place offers: a corner of the Wayanad hills where
             the noise of the world falls away and you are left with birdsong,
-            plantation air, and time that is genuinely your own.
+            pure unpolluted air, and time that is genuinely your own.
           </p>
           <p className="max-w-prose text-base leading-relaxed text-on-surface">
-            Nestled in Padichira, about 10 km from Pulpally, Kaivalyam is a
-            pet-friendly homestay built for long, unhurried stays. Whether you
-            come for a week or a month, you will find the same warm hospitality,
+            Nestled in Padichira, about 10 km from Pulpally town, Kaivalyam is
+            a homestay built for long, unhurried stays. Whether you come for a
+            week or a month, you will find the same hospitable welcome,
             home-cooked Malayali meals, and the quiet that the name promises.
           </p>
         </div>

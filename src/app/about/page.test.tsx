@@ -49,16 +49,11 @@ describe("About page (Req 3.1–3.5)", () => {
     expect(within(region).getByText(/solitude of the soul/i)).toBeInTheDocument();
   });
 
-  it("presents the pet-friendly, tranquil hill-village long-stay positioning (Req 3.2)", () => {
+  it("presents the tranquil hill-village long-stay positioning (Req 3.2)", () => {
     render(<AboutPage />);
-    // Scope to the positioning section: the same phrasing also appears in the
-    // page intro, so an unscoped query would be ambiguous.
     const region = screen.getByRole("region", {
       name: aboutContent.positioning.heading,
     });
-    // "pet-friendly" appears in both the section heading and its prose; assert
-    // it shows up at least once within the positioning section.
-    expect(within(region).getAllByText(/pet-friendly/i).length).toBeGreaterThan(0);
     expect(within(region).getByText(/long-staying guests/i)).toBeInTheDocument();
     expect(within(region).getByText(/tranquil hill-village/i)).toBeInTheDocument();
   });

@@ -160,13 +160,19 @@ describe("AttractionsDirectory", () => {
     }
   });
 
-  it("renders religious subgroup headings: Hindu, Jain, Christian, Muslim (Req 7.5)", () => {
+  it("renders all religious sites together without sub-group headings (client request)", () => {
     render(<AttractionsDirectory attractions={onePerCategory} />);
 
+    // The single "Religious Sites" h2 heading should be present
+    expect(
+      screen.getByRole("heading", { name: /religious sites/i }),
+    ).toBeInTheDocument();
+
+    // Sub-group headings (Hindu / Jain / Christian / Muslim) should NOT appear
     for (const subgroup of ["Hindu", "Jain", "Christian", "Muslim"]) {
       expect(
-        screen.getByRole("heading", { name: new RegExp(subgroup, "i") }),
-      ).toBeInTheDocument();
+        screen.queryByRole("heading", { name: new RegExp(`^${subgroup}$`, "i") }),
+      ).not.toBeInTheDocument();
     }
   });
 

@@ -101,7 +101,7 @@ export const primaryNavItems: readonly NavItem[] = [
   { id: 'facilities', label: 'Facilities', href: ROUTES.facilities },
   { id: 'gallery', label: 'Gallery', href: ROUTES.gallery },
   { id: 'attractions', label: 'Attractions', href: ROUTES.attractions },
-  { id: 'cuisine', label: 'Cuisine', href: ROUTES.cuisine },
+  { id: 'cuisine', label: 'Inhouse Dining', href: ROUTES.cuisine },
   { id: 'contact', label: 'Contact', href: ROUTES.contact },
 ] as const;
 

@@ -38,13 +38,10 @@ import { cn } from "@/components/ui/cn";
 import { AttractionCard } from "@/components/sections/AttractionCard";
 import {
   groupByCategory,
-  groupReligiousBySubgroup,
 } from "@/domain/attractions";
 import {
   ATTRACTION_CATEGORY_IDS,
-  RELIGIOUS_SUBGROUPS,
   type AttractionCategoryId,
-  type ReligiousSubgroup,
   type AttractionItem,
 } from "@/content/types";
 
@@ -82,13 +79,8 @@ const CATEGORY_ICONS: Record<AttractionCategoryId, LucideIcon> = {
   art_galleries_theme_parks: Palette,
 };
 
-/** Human-readable labels for the 4 religious subgroups (Req 7.5). */
-const SUBGROUP_LABELS: Record<ReligiousSubgroup, string> = {
-  hindu: "Hindu",
-  jain: "Jain",
-  christian: "Christian",
-  muslim: "Muslim",
-};
+/** Human-readable labels for the 4 religious subgroups — kept for data layer compatibility. */
+// Sub-grouping removed from UI per client request; all religious sites shown together alphabetically.
 
 // ---------------------------------------------------------------------------
 // Sub-components
@@ -143,7 +135,7 @@ function CategorySection({
   );
 }
 
-/** The Religious Sites section — h2 for the category, h3 for each subgroup. */
+/** The Religious Sites section — all sites together in alphabetical order (no sub-grouping). */
 function ReligiousSitesSection({
   items,
 }: {
@@ -151,8 +143,11 @@ function ReligiousSitesSection({
 }) {
   if (items.length === 0) return null;
 
-  const subgroups = groupReligiousBySubgroup(items);
   const headingId = "category-religious_sites";
+  // Sort alphabetically by name, all sub-groups merged
+  const sortedItems = [...items].sort((a, b) =>
+    a.name.localeCompare(b.name, "en", { sensitivity: "base" }),
+  );
 
   return (
     <section aria-labelledby={headingId} className="scroll-mt-20">
@@ -169,26 +164,7 @@ function ReligiousSitesSection({
         </span>
         Religious Sites
       </h2>
-
-      <div className="mt-6 flex flex-col gap-10">
-        {RELIGIOUS_SUBGROUPS.map((subgroup) => {
-          const subItems = subgroups[subgroup];
-          if (subItems.length === 0) return null;
-
-          const subHeadingId = `subgroup-${subgroup}`;
-          return (
-            <div key={subgroup}>
-              <h3
-                id={subHeadingId}
-                className="font-serif text-xl font-semibold text-secondary md:text-2xl"
-              >
-                {SUBGROUP_LABELS[subgroup]}
-              </h3>
-              <AttractionGrid items={subItems} />
-            </div>
-          );
-        })}
-      </div>
+      <AttractionGrid items={sortedItems} />
     </section>
   );
 }
@@ -205,8 +181,8 @@ export interface AttractionsDirectoryProps {
 }
 
 /**
- * Renders the full attractions directory grouped into 11 categories, with
- * Religious Sites further split into 4 subgroups.
+ * Renders the full attractions directory grouped into 11 categories.
+ * Religious Sites shows all sites together in alphabetical order (no sub-grouping).
  */
 export function AttractionsDirectory({
   attractions,

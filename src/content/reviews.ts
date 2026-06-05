@@ -43,27 +43,15 @@ export const EMPTY_REVIEWS: readonly Review[] = [] as const;
  */
 export const reviews: readonly Review[] = [
   {
-    id: 'review-anjali-r',
-    reviewerName: 'Anjali R.',
-    text: 'The most peaceful few days we have had in years. We woke to birdsong, read in the library all afternoon, and our dog was treated like family. Kaivalyam truly lives up to its name.',
+    id: 'review-sujaya-sundaram',
+    reviewerName: 'Sujaya Sundaram, Bangalore',
+    text: 'Kaivalyam is truly a haven for those seeking a break from the humdrum of city life and daily work routines. Tucked away unobtrusively in the verdant village of Padichira this lovely getaway was an amazing experience of living life at an unhurried pace, spending time looking at the canopy of trees, eating slow meals outdoors, listening to birdsongs, relaxing the body and so much more. I particularly liked the numerous little cozy spaces across the property where I could just lose myself reading, drawing, meditating or doing nothing. The food was delicious and so satisfying. I will certainly go another time if I get the chance.',
     rating: 5,
   },
   {
-    id: 'review-thomas-k',
-    reviewerName: 'Thomas K.',
-    text: 'Stayed in the Luxury Cottage with our kids — the roof balcony at dusk and the indoor play area were perfect. The home-cooked Malayali food was the highlight of the trip.',
+    id: 'review-sreeja-mohandas',
+    reviewerName: 'Sreeja Mohandas, Bangalore',
+    text: 'A blissful little oasis in the middle of dense green forests. I don\'t know what I loved more, the fragrant air or the dinners under the stars or the quiet of the cozy little library. I can only say that time stood still for me at Kaivalyam. Will definitely visit again.',
     rating: 5,
-  },
-  {
-    id: 'review-meera-s',
-    reviewerName: 'Meera S.',
-    text: 'Such warm hosts and genuinely quiet surroundings. The campfire evening and the walks around the plantations made it feel like a proper escape from the city.',
-    rating: 4,
-  },
-  {
-    id: 'review-david-george',
-    reviewerName: 'David George',
-    text: 'A simple, restful long stay. The Classic Room had everything we needed and the 24-hour assistance meant we never had to worry about a thing.',
-    // No rating — exercises the optional-rating path (Req 11.2).
   },
 ] as const;

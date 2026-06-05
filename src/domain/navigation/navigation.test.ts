@@ -29,7 +29,7 @@ const REQUIRED_NAV = [
   { id: "facilities", label: "Facilities", href: "/facilities" },
   { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "attractions", label: "Attractions", href: "/attractions" },
-  { id: "cuisine", label: "Cuisine", href: "/cuisine" },
+  { id: "cuisine", label: "Inhouse Dining", href: "/cuisine" },
   { id: "contact", label: "Contact", href: "/contact" },
 ] as const;
 

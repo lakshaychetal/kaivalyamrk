@@ -36,7 +36,7 @@ describe("Hero section", () => {
     renderHomePage();
     // The tagline is the h1 on the page
     expect(
-      screen.getByRole("heading", { level: 1, name: /EXPERIENCE ABSOLUTE SOLITUDE/i }),
+      screen.getByRole("heading", { level: 1, name: /EXPERIENCE SERENE SOLITUDE/i }),
     ).toBeInTheDocument();
   });
 

@@ -95,7 +95,7 @@ export default function CuisinePage() {
       <header className="mx-auto w-full max-w-3xl px-4 pt-12 md:px-6 md:pt-16">
         <h1 className="flex items-center gap-3 font-serif text-3xl font-semibold text-secondary sm:text-4xl">
           <Icon icon={UtensilsCrossed} size="lg" aria-hidden className="text-primary" />
-          Cuisine &amp; Dining
+          Inhouse Dining
         </h1>
         <p className="mt-4 max-w-prose text-lg leading-relaxed text-on-surface-muted">
           {intro}

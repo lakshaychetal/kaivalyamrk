@@ -73,7 +73,7 @@ export interface SiteInfo {
 }
 
 /** Brand tagline, reused across the site. */
-export const TAGLINE = 'EXPERIENCE ABSOLUTE SOLITUDE #KAIVALYAM' as const;
+export const TAGLINE = 'EXPERIENCE SERENE SOLITUDE #KAIVALYAM' as const;
 
 /**
  * The homestay postal address (Padichira, Pulpally, Wayanad, Kerala).
@@ -114,11 +114,11 @@ export const siteInfo: SiteInfo = {
   name: 'Kaivalyam Homestay',
   tagline: TAGLINE,
   shortDescription:
-    'A pet-friendly, tranquil hill-village homestay in Padichira, Wayanad, Kerala — made for solitude, nature, and slow, long stays.',
-  // PLACEHOLDER — client provides the real reservations phone number.
-  phone: '+91 90000 00000',
-  // PLACEHOLDER — client provides the real reservations email.
-  email: 'stay@kaivalyamhomestay.example',
+    'A tranquil hill-village homestay in Padichira, Wayanad, Kerala — made for solitude, nature, and slow, long stays.',
+  // Real reservations phone number.
+  phone: '+91 80753 91908',
+  // Real reservations email.
+  email: 'Stay@kaivalyamhomestay.com',
   // PLACEHOLDER — kept in sync with the WhatsApp URL builder's placeholder.
   whatsappNumber: KAIVALYAM_WHATSAPP_NUMBER,
   address,

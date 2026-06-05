@@ -55,7 +55,7 @@ export interface AboutContent {
 }
 
 /** The brand tagline (Req 2.2 / brand voice), reused on the About page. */
-export const TAGLINE = 'EXPERIENCE ABSOLUTE SOLITUDE #KAIVALYAM' as const;
+export const TAGLINE = 'EXPERIENCE SERENE SOLITUDE #KAIVALYAM' as const;
 
 /**
  * The meaning of "Kaivalyam" — liberation and solitude of the soul (Req 3.1).
@@ -65,7 +65,7 @@ export const meaning: AboutSection = {
   heading: 'The Meaning of Kaivalyam',
   paragraphs: [
     'Kaivalyam is an old word for liberation — the deep, settled solitude of the soul that comes when the noise finally falls away. It names a kind of freedom that is not about going anywhere, but about arriving fully where you are.',
-    'We built this homestay around that idea. No rush, no crowds, no performance — just clear hill air, the green hush of Wayanad, and the space to feel like yourself again. To stay at Kaivalyam is to experience absolute solitude, on your own gentle terms.',
+    'We built this homestay around that idea. No rush, no crowds, no performance — just clear hill air, the green hush of Wayanad, and the space to feel like yourself again. To stay at Kaivalyam is to experience serene solitude, on your own terms.',
   ],
 };
 
@@ -75,10 +75,10 @@ export const meaning: AboutSection = {
  */
 export const positioning: AboutSection = {
   id: 'positioning',
-  heading: 'A Pet-Friendly Home for Long, Slow Stays',
+  heading: 'A Tranquil Home for Long, Slow Stays',
   paragraphs: [
     'Kaivalyam is a tranquil hill-village homestay in Padichira, Wayanad — a quiet place made for people who want to stay a while. Days here are unhurried by design: long mornings, slow meals, walks that go nowhere in particular. It suits long-staying guests who are looking for calm rather than a checklist.',
-    'And your pets are family, so they are welcome here too. Kaivalyam is proudly pet-friendly, with garden, trails, and open space for them to settle in alongside you. Come for a few restful days or a long, restorative season — the door is open either way.',
+    'Come for a few restful days or a long, restorative season — the door is open either way.',
   ],
 };
 
@@ -110,7 +110,7 @@ export const signatureOfferings: SignatureOffering[] = [
     id: 'nature-walks',
     title: 'Nature Walks',
     description:
-      'Gentle walks through plantations and greenery that begin right at the homestay, at a pace that lets you actually notice where you are.',
+      'Peaceful walks through plantations and greenery that begin right at the homestay, at a pace that lets you actually notice where you are.',
     icon: 'footprints',
   },
   {

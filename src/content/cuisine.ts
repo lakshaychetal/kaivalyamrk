@@ -43,7 +43,7 @@ export interface CuisineContent {
 
 /** Lead-in line for the Cuisine page. */
 export const intro =
-  'Food at Kaivalyam is home cooking in the truest sense — authentic Malayali flavours, local produce, and meals made to be lingered over.';
+  'Food at Kaivalyam is home cooking in the truest sense — authentic Malayali flavours, local organic produce, and meals made to be lingered over.';
 
 /**
  * Authentic Malayali cuisine, both vegetarian and non-vegetarian (Req 8.1).
@@ -52,8 +52,8 @@ export const malayaliCuisine: CuisineSection = {
   id: 'malayali-cuisine',
   heading: 'Authentic Malayali Cuisine',
   paragraphs: [
-    'Our kitchen cooks the food of Kerala the way it is meant to be eaten — fresh, fragrant, and rooted in the region. Think appam and stew, Wayanad-style rice, coconut-rich curries, fiery pickles, and the kind of breakfast that sets up a whole day of wandering.',
-    'There is plenty for everyone at the table: a full spread of vegetarian dishes built around local vegetables and spices, and hearty non-vegetarian options for those who want them. Tell us your preferences and we will cook to them — simply, generously, and with a lot of care.',
+    'Our kitchen cooks the food of Kerala the way it is meant to be eaten — fresh, fragrant, and rooted in the region. Think appam and stew, Wayanad-style rice, coconut-rich curries, fiery pickles, and the kind of breakfast that pamper your taste buds with a wondrous array of flavours.',
+    'There is plenty for everyone at the table: a full spread of vegetarian dishes built around local vegetables and spices, and hearty non-vegetarian options for those who want them. Your cooking preferences are all we need — we will cook to them simply, generously, and with a lot of care.',
   ],
 };
 
@@ -66,14 +66,14 @@ export const diningExperiences: DiningExperience[] = [
     id: 'home-cooked',
     title: 'Home-Cooked Meals',
     description:
-      'Every meal is prepared in our own kitchen with local produce — honest, comforting food served warm, just as it would be in a Wayanad home.',
+      'Every meal is prepared in our own kitchen with local produce — honest, comforting food served hot, just as it would be in a Wayanad home.',
     icon: 'utensils',
   },
   {
     id: 'outdoor-dining',
     title: 'Outdoor Dining',
     description:
-      'Eat in the open air, surrounded by garden and birdsong — a slow breakfast in the morning light or dinner under the hill-country stars.',
+      'Eat in the open air, surrounded by garden and birdsong — a romantic candle-light dinner in natural settings.',
     icon: 'trees',
   },
 ];

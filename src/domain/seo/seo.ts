@@ -32,7 +32,7 @@
 export const SITE_NAME = 'Kaivalyam Homestay' as const;
 
 /** Brand tagline (Req: brand identity). */
-export const SITE_TAGLINE = 'EXPERIENCE ABSOLUTE SOLITUDE #KAIVALYAM' as const;
+export const SITE_TAGLINE = 'EXPERIENCE SERENE SOLITUDE #KAIVALYAM' as const;
 
 /**
  * Canonical site origin. A PLACEHOLDER until the production domain is confirmed;
@@ -124,7 +124,7 @@ interface PageMetaSource {
 export const PAGE_META_REGISTRY: Readonly<Record<PageKey, PageMetaSource>> = {
   home: {
     path: '/',
-    title: 'Kaivalyam Homestay — Experience Absolute Solitude in Wayanad',
+    title: 'Kaivalyam Homestay — Experience Serene Solitude in Wayanad',
     description:
       'A pet-friendly hill-village homestay in Padichira, Wayanad, Kerala. Wake to misted hills, birdsong, and the calm of true seclusion — Kaivalyam means liberation of the soul.',
   },
@@ -539,7 +539,7 @@ export function LodgingBusinessJsonLd(
 export const KAIVALYAM_BUSINESS: LodgingBusinessConfig = {
   name: SITE_NAME,
   description:
-    'A pet-friendly hill-village homestay in Padichira, Wayanad, Kerala — a tranquil retreat for nature immersion and absolute solitude.',
+    'A hill-village homestay in Padichira, Wayanad, Kerala — a tranquil retreat for nature immersion and serene solitude.',
   url: SITE_URL,
   telephone: '+91 90000 00000',
   email: 'stay@kaivalyamhomestay.com',

@@ -59,7 +59,7 @@ const contactLink = cn(
 );
 
 export default function ContactPage() {
-  const { name, phone, email, address } = siteInfo;
+  const { name, phone, landline, email, address } = siteInfo;
 
   return (
     <article className="mx-auto w-full max-w-5xl px-4 py-12 md:px-6 md:py-16">
@@ -89,11 +89,25 @@ export default function ContactPage() {
               <Icon icon={Phone} aria-hidden className="mt-1 text-primary" />
               <div>
                 <dt className="text-sm font-medium text-on-surface-muted">
-                  Phone
+                  Mobile
                 </dt>
                 <dd className="mt-1 text-base text-on-surface">
                   <a href={telHref(phone)} className={contactLink}>
                     {phone}
+                  </a>
+                </dd>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Icon icon={Phone} aria-hidden className="mt-1 text-primary" />
+              <div>
+                <dt className="text-sm font-medium text-on-surface-muted">
+                  Landline
+                </dt>
+                <dd className="mt-1 text-base text-on-surface">
+                  <a href={telHref(landline)} className={contactLink}>
+                    {landline}
                   </a>
                 </dd>
               </div>

@@ -1,115 +1,56 @@
 /**
  * `ReviewsSection` — guest reviews & social proof (Req 11.1–11.4).
  * ----------------------------------------------------------------
- * Feature: kaivalyam-homestay-website (task 11.7)
- *
- * A single, reusable section that renders guest reviews. It is used in two
- * places, driven only by props (no duplicate components):
- *
- *   • As a COMPACT PREVIEW on the Home page (Req 2.6 / 11.3) — pass `limit`
- *     to cap how many reviews show, and `viewAllHref` to render a link through
- *     to the full Reviews section so it stays reachable from Home.
- *   • As the FULL section/page — render with no `limit` (every review shows).
- *
- * Rendering contract (maps directly onto the acceptance criteria):
- *   • Req 11.1 — every rendered review shows its reviewer NAME and review TEXT.
- *   • Req 11.2 — a numeric RATING is shown IF AND ONLY IF the review has one.
- *     The rating is presented as filled/outline star SHAPES plus a visible
- *     numeric value ("4 / 5"), and an accessible name ("Rated 4 out of 5"), so
- *     the information is never conveyed by color alone (Req 22.6).
- *   • Req 11.4 — when there are NO reviews, an explicit "reviews are not yet
- *     available" message is rendered instead of an empty list.
- *
- * Presentation contract (Design System):
- *   • SEMANTIC tokens only (`bg-surface`, `text-on-surface`, `text-accent`, …)
- *     — never raw hex.
- *   • Lucide is the single icon family, rendered through the DS `Icon`.
- *   • The "view all" link is a ≥44×44px touch target with the shared visible
- *     focus ring (Req 18.5, 22.3); any motion is `motion-safe` (Req 22.7).
- *   • Mobile-first responsive grid (1 → 2 → 3 columns).
- *
- * Server component — no client interactivity. Defaults `reviews` to the
- * authored content collection so callers can use `<ReviewsSection />` directly,
- * while tests can inject their own review sets (including an empty one).
+ * On mobile: auto-sliding carousel showing one review at a time (advances
+ * every 6 seconds, manual prev/next dots also available).
+ * On sm+ screens: 2-column side-by-side grid.
  */
-import Link from "next/link";
-import { Star, ArrowRight } from "lucide-react";
+"use client";
 
-import { Card, CardTitle, CardBody } from "@/components/ui/Card";
+import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
+import { Star, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+
+import { Card } from "@/components/ui/Card";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/components/ui/cn";
 import { focusRing } from "@/components/ui/buttonStyles";
 import { reviews as defaultReviews } from "@/content/reviews";
 import type { Review } from "@/content/types";
 
-/** The rating scale the star presentation renders against (a 1–5 scale). */
 export const RATING_SCALE_MAX = 5;
 
 export interface ReviewsSectionProps {
-  /**
-   * The reviews to render. Defaults to the authored content collection so the
-   * component is drop-in on the Home page and the full section; tests inject
-   * their own sets (including `[]` to exercise the empty state, Req 11.4).
-   */
   reviews?: readonly Review[];
-  /**
-   * Cap on how many reviews to display (preview mode, Req 11.3 / 2.6). When
-   * omitted, ALL reviews are shown (the full section). The empty state is keyed
-   * off the source collection, never off the limit.
-   */
   limit?: number;
-  /**
-   * Optional link to the full Reviews section. When provided (typically in the
-   * Home preview) a "Read all reviews" link is rendered so the full section is
-   * reachable from the Home page (Req 11.3).
-   */
   viewAllHref?: string;
-  /** Section title. */
   title?: string;
-  /** Heading level for the section title, to keep a valid outline (Req 21.2). */
   headingLevel?: 2 | 3;
-  /** Optional anchor id for the section landmark (e.g. `reviews`). */
   id?: string;
-  /** Extra classes appended to the section root. */
   className?: string;
 }
 
-/** Format a rating for display: integers stay whole, otherwise one decimal. */
 function formatRating(rating: number): string {
   return Number.isInteger(rating) ? String(rating) : rating.toFixed(1);
 }
 
-/**
- * The numeric rating presentation (Req 11.2). Uses star SHAPE (filled vs
- * outline) AND a visible numeric value, with an accessible name — so the rating
- * is conveyed by more than color alone (Req 22.6).
- */
 function RatingDisplay({ rating }: { rating: number }) {
   const filled = Math.max(0, Math.min(RATING_SCALE_MAX, Math.round(rating)));
   const accessibleName = `Rated ${formatRating(rating)} out of ${RATING_SCALE_MAX}`;
 
   return (
-    <p
-      className="mt-1 flex items-center gap-2"
-      role="img"
-      aria-label={accessibleName}
-    >
+    <p className="flex items-center gap-2" role="img" aria-label={accessibleName}>
       <span className="flex items-center gap-0.5" aria-hidden="true">
-        {Array.from({ length: RATING_SCALE_MAX }, (_, i) => {
-          const isFilled = i < filled;
-          return (
-            <Icon
-              key={i}
-              icon={Star}
-              size="sm"
-              className={cn(
-                isFilled
-                  ? "fill-current text-accent"
-                  : "fill-none text-on-surface-muted",
-              )}
-            />
-          );
-        })}
+        {Array.from({ length: RATING_SCALE_MAX }, (_, i) => (
+          <Icon
+            key={i}
+            icon={Star}
+            size="sm"
+            className={cn(
+              i < filled ? "fill-current text-accent" : "fill-none text-on-surface-muted",
+            )}
+          />
+        ))}
       </span>
       <span className="text-sm font-medium text-on-surface">
         {formatRating(rating)} / {RATING_SCALE_MAX}
@@ -118,42 +59,102 @@ function RatingDisplay({ rating }: { rating: number }) {
   );
 }
 
-/** A single review card: reviewer name, review text, optional rating. */
 function ReviewCard({ review }: { review: Review }) {
   const hasRating = typeof review.rating === "number";
-
   return (
-    <li className="h-full">
-      <Card variant="review" className="h-full">
-        {/* Stars at the top */}
-        {hasRating && <RatingDisplay rating={review.rating as number} />}
-
-        {/* Opening quote mark */}
-        <span
-          aria-hidden="true"
-          className="mt-3 block font-serif text-5xl leading-none text-primary/30 select-none"
-        >
-          &ldquo;
-        </span>
-
-        {/* Review text — italicised like a proper testimonial */}
-        <p className="mt-1 text-sm leading-relaxed text-on-surface italic">
-          {review.text}
-        </p>
-
-        {/* Reviewer name as attribution at the bottom */}
-        <p className="mt-4 border-t border-border pt-3 text-sm font-semibold text-secondary">
-          — {review.reviewerName}
-        </p>
-      </Card>
-    </li>
+    <Card variant="review" className="h-full">
+      {hasRating && <RatingDisplay rating={review.rating as number} />}
+      <span aria-hidden="true" className="mt-3 block font-serif text-5xl leading-none text-primary/30 select-none">
+        &ldquo;
+      </span>
+      <p className="mt-1 text-sm leading-relaxed text-on-surface italic">
+        {review.text}
+      </p>
+      <p className="mt-4 border-t border-border pt-3 text-sm font-semibold text-secondary">
+        — {review.reviewerName}
+      </p>
+    </Card>
   );
 }
 
-/**
- * The reviews section. Reusable as a Home-page preview (`limit` + `viewAllHref`)
- * and as the full section (no `limit`).
- */
+/** Mobile-only auto-sliding carousel for long reviews. */
+function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
+  const [idx, setIdx] = useState(0);
+  const count = reviews.length;
+
+  const goPrev = useCallback(() => setIdx((i) => (i - 1 + count) % count), [count]);
+  const goNext = useCallback(() => setIdx((i) => (i + 1) % count), [count]);
+
+  // Auto-advance every 6 seconds; pause on user interaction
+  useEffect(() => {
+    if (count < 2) return;
+    const timer = setInterval(goNext, 6000);
+    return () => clearInterval(timer);
+  }, [count, goNext]);
+
+  const current = reviews[idx]!;
+
+  return (
+    <div className="relative sm:hidden" aria-label="Guest reviews carousel" aria-live="polite">
+      {/* Single card */}
+      <div className="overflow-hidden rounded-xl">
+        <ReviewCard key={current.id} review={current} />
+      </div>
+
+      {/* Prev / Next */}
+      {count > 1 && (
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <button
+            type="button"
+            aria-label="Previous review"
+            onClick={goPrev}
+            className={cn(
+              "flex h-9 w-9 items-center justify-center rounded-full",
+              "bg-surface-alt text-on-surface border border-border",
+              "hover:bg-primary hover:text-on-primary hover:border-primary",
+              "motion-safe:transition motion-safe:duration-150",
+              focusRing,
+            )}
+          >
+            <ChevronLeft size={18} aria-hidden />
+          </button>
+
+          {/* Dot indicators */}
+          <div className="flex items-center gap-2" aria-hidden="true">
+            {Array.from({ length: count }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setIdx(i)}
+                aria-label={`Go to review ${i + 1}`}
+                className={cn(
+                  "h-2 rounded-full motion-safe:transition-all motion-safe:duration-300",
+                  i === idx ? "w-6 bg-primary" : "w-2 bg-border",
+                )}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            aria-label="Next review"
+            onClick={goNext}
+            className={cn(
+              "flex h-9 w-9 items-center justify-center rounded-full",
+              "bg-surface-alt text-on-surface border border-border",
+              "hover:bg-primary hover:text-on-primary hover:border-primary",
+              "motion-safe:transition motion-safe:duration-150",
+              focusRing,
+            )}
+          >
+            <ChevronRight size={18} aria-hidden />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function ReviewsSection({
   reviews = defaultReviews,
   limit,
@@ -185,9 +186,18 @@ export function ReviewsSection({
 
         {hasReviews ? (
           <>
-            <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {/* Mobile: auto-sliding carousel (one at a time) */}
+            <div className="mt-8">
+              <ReviewCarousel reviews={shown} />
+            </div>
+
+            {/* sm+: side-by-side 2-column grid — aria-hidden because carousel
+                is the semantic list; this is a visual duplicate for larger screens */}
+            <ul className="mt-8 hidden sm:grid grid-cols-2 gap-6" aria-hidden="true">
               {shown.map((review) => (
-                <ReviewCard key={review.id} review={review} />
+                <li key={review.id} className="h-full">
+                  <ReviewCard review={review} />
+                </li>
               ))}
             </ul>
 
@@ -209,7 +219,6 @@ export function ReviewsSection({
             )}
           </>
         ) : (
-          /* Req 11.4 — explicit empty state, never an empty list. */
           <p className="mt-6 max-w-prose text-base text-on-surface-muted">
             Guest reviews are not yet available. Please check back soon.
           </p>

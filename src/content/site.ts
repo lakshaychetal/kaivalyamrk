@@ -54,21 +54,16 @@ export interface MapLocation {
 
 /** The full typed site/contact configuration. */
 export interface SiteInfo {
-  /** Homestay display name (Req 1.7). */
   name: string;
-  /** Brand tagline. */
   tagline: string;
-  /** Short one-line description for footer / meta. */
   shortDescription: string;
-  /** Contact phone in human-readable international form (Req 9.1). PLACEHOLDER. */
+  /** Mobile / reservations phone (Req 9.1). */
   phone: string;
-  /** Contact email (Req 9.1). PLACEHOLDER. */
+  /** Landline number. */
+  landline: string;
   email: string;
-  /** WhatsApp business number (Req 9.3 / 16.x). PLACEHOLDER. */
   whatsappNumber: string;
-  /** Postal address — Padichira, Pulpally, Wayanad, Kerala. */
   address: PostalAddress;
-  /** Map location for the embedded Wayanad map (Req 9.4). APPROXIMATE pin. */
   mapLocation: MapLocation;
 }
 
@@ -117,7 +112,7 @@ export const siteInfo: SiteInfo = {
     'A tranquil hill-village homestay in Padichira, Wayanad, Kerala — made for solitude, nature, and slow, long stays.',
   // Real reservations phone number.
   phone: '+91 80753 91908',
-  // Real reservations email.
+  landline: '+91 4936 237312',
   email: 'Stay@kaivalyamhomestay.com',
   // PLACEHOLDER — kept in sync with the WhatsApp URL builder's placeholder.
   whatsappNumber: KAIVALYAM_WHATSAPP_NUMBER,

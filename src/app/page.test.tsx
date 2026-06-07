@@ -15,8 +15,16 @@
  * implementation details.
  */
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeAll } from "vitest";
 import HomePage from "./page";
+
+// jsdom doesn't implement HTMLMediaElement methods — mock them so VideoTour
+// and AmbientPlayer don't throw during tests.
+beforeAll(() => {
+  window.HTMLMediaElement.prototype.play = vi.fn().mockResolvedValue(undefined);
+  window.HTMLMediaElement.prototype.pause = vi.fn();
+  window.HTMLMediaElement.prototype.load = vi.fn();
+});
 
 // ---------------------------------------------------------------------------
 // Helpers

@@ -1,13 +1,16 @@
 /**
  * `ReviewsSection` — guest reviews & social proof (Req 11.1–11.4).
- * ----------------------------------------------------------------
- * On mobile: auto-sliding carousel showing one review at a time (advances
- * every 6 seconds, manual prev/next dots also available).
- * On sm+ screens: 2-column side-by-side grid.
+ *
+ * Mobile  : CSS scroll-snap carousel — one card fills the screen at a time,
+ *           swipeable left/right, auto-advances every 6 seconds.
+ *           Prev/Next buttons + dot indicators for manual control.
+ * sm+     : Standard 2-column side-by-side grid.
+ *
+ * Single DOM tree — no duplicate rendering.
  */
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Star, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -36,19 +39,16 @@ function formatRating(rating: number): string {
 
 function RatingDisplay({ rating }: { rating: number }) {
   const filled = Math.max(0, Math.min(RATING_SCALE_MAX, Math.round(rating)));
-  const accessibleName = `Rated ${formatRating(rating)} out of ${RATING_SCALE_MAX}`;
-
+  const label = `Rated ${formatRating(rating)} out of ${RATING_SCALE_MAX}`;
   return (
-    <p className="flex items-center gap-2" role="img" aria-label={accessibleName}>
+    <p className="flex items-center gap-2" role="img" aria-label={label}>
       <span className="flex items-center gap-0.5" aria-hidden="true">
         {Array.from({ length: RATING_SCALE_MAX }, (_, i) => (
           <Icon
             key={i}
             icon={Star}
             size="sm"
-            className={cn(
-              i < filled ? "fill-current text-accent" : "fill-none text-on-surface-muted",
-            )}
+            className={cn(i < filled ? "fill-current text-accent" : "fill-none text-on-surface-muted")}
           />
         ))}
       </span>
@@ -77,81 +77,141 @@ function ReviewCard({ review }: { review: Review }) {
   );
 }
 
-/** Mobile-only auto-sliding carousel for long reviews. */
-function ReviewCarousel({ reviews }: { reviews: readonly Review[] }) {
-  const [idx, setIdx] = useState(0);
+/**
+ * On mobile: CSS scroll-snap + JS index tracking so one card is always
+ * centred. Auto-advances every 6 s. Prev/Next arrows + dot nav.
+ * On sm+: plain 2-column grid (scroll container hidden via CSS).
+ */
+function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const count = reviews.length;
 
-  const goPrev = useCallback(() => setIdx((i) => (i - 1 + count) % count), [count]);
-  const goNext = useCallback(() => setIdx((i) => (i + 1) % count), [count]);
+  /* Scroll the snap container to the target slide */
+  const scrollTo = useCallback((idx: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const slide = container.children[idx] as HTMLElement | undefined;
+    if (slide) {
+      container.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+    }
+    setActiveIdx(idx);
+  }, []);
 
-  // Auto-advance every 6 seconds; pause on user interaction
+  const goPrev = useCallback(() => scrollTo((activeIdx - 1 + count) % count), [activeIdx, count, scrollTo]);
+  const goNext = useCallback(() => scrollTo((activeIdx + 1) % count), [activeIdx, count, scrollTo]);
+
+  /* Auto-advance every 6 seconds */
   useEffect(() => {
     if (count < 2) return;
-    const timer = setInterval(goNext, 6000);
-    return () => clearInterval(timer);
-  }, [count, goNext]);
+    const t = setInterval(() => {
+      setActiveIdx((i) => {
+        const next = (i + 1) % count;
+        const container = scrollRef.current;
+        if (container) {
+          const slide = container.children[next] as HTMLElement | undefined;
+          if (slide) container.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+        }
+        return next;
+      });
+    }, 6000);
+    return () => clearInterval(t);
+  }, [count]);
 
-  const current = reviews[idx]!;
+  /* Keep activeIdx in sync when user swipes manually */
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const onScroll = () => {
+      const idx = Math.round(container.scrollLeft / container.clientWidth);
+      setActiveIdx(idx);
+    };
+    container.addEventListener("scroll", onScroll, { passive: true });
+    return () => container.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="relative sm:hidden" aria-label="Guest reviews carousel" aria-live="polite">
-      {/* Single card */}
-      <div className="overflow-hidden rounded-xl">
-        <ReviewCard key={current.id} review={current} />
+    <>
+      {/* ── MOBILE: scroll-snap carousel (hidden on sm+) ── */}
+      <div className="sm:hidden">
+        {/* Snap container — overflow-x scroll, each child = full width */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
+          style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+          aria-label="Guest reviews"
+        >
+          {reviews.map((review) => (
+            <div
+              key={review.id}
+              className="flex-none w-full snap-center"
+            >
+              <ReviewCard review={review} />
+            </div>
+          ))}
+        </div>
+
+        {/* Controls: prev · dots · next */}
+        {count > 1 && (
+          <div className="mt-4 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              aria-label="Previous review"
+              onClick={goPrev}
+              className={cn(
+                "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
+                "bg-surface-alt border border-border text-on-surface",
+                "hover:bg-primary hover:text-on-primary hover:border-primary",
+                "motion-safe:transition motion-safe:duration-150",
+                focusRing,
+              )}
+            >
+              <ChevronLeft size={18} aria-hidden />
+            </button>
+
+            {/* Dot indicators */}
+            <div className="flex items-center justify-center gap-2" aria-hidden="true">
+              {Array.from({ length: count }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => scrollTo(i)}
+                  aria-label={`Go to review ${i + 1}`}
+                  className={cn(
+                    "h-2 rounded-full motion-safe:transition-all motion-safe:duration-300",
+                    i === activeIdx ? "w-6 bg-primary" : "w-2 bg-border",
+                  )}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              aria-label="Next review"
+              onClick={goNext}
+              className={cn(
+                "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
+                "bg-surface-alt border border-border text-on-surface",
+                "hover:bg-primary hover:text-on-primary hover:border-primary",
+                "motion-safe:transition motion-safe:duration-150",
+                focusRing,
+              )}
+            >
+              <ChevronRight size={18} aria-hidden />
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Prev / Next */}
-      {count > 1 && (
-        <div className="mt-4 flex items-center justify-between gap-3">
-          <button
-            type="button"
-            aria-label="Previous review"
-            onClick={goPrev}
-            className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full",
-              "bg-surface-alt text-on-surface border border-border",
-              "hover:bg-primary hover:text-on-primary hover:border-primary",
-              "motion-safe:transition motion-safe:duration-150",
-              focusRing,
-            )}
-          >
-            <ChevronLeft size={18} aria-hidden />
-          </button>
-
-          {/* Dot indicators */}
-          <div className="flex items-center gap-2" aria-hidden="true">
-            {Array.from({ length: count }, (_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setIdx(i)}
-                aria-label={`Go to review ${i + 1}`}
-                className={cn(
-                  "h-2 rounded-full motion-safe:transition-all motion-safe:duration-300",
-                  i === idx ? "w-6 bg-primary" : "w-2 bg-border",
-                )}
-              />
-            ))}
-          </div>
-
-          <button
-            type="button"
-            aria-label="Next review"
-            onClick={goNext}
-            className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full",
-              "bg-surface-alt text-on-surface border border-border",
-              "hover:bg-primary hover:text-on-primary hover:border-primary",
-              "motion-safe:transition motion-safe:duration-150",
-              focusRing,
-            )}
-          >
-            <ChevronRight size={18} aria-hidden />
-          </button>
-        </div>
-      )}
-    </div>
+      {/* ── DESKTOP (sm+): 2-column grid ── */}
+      <ul className="hidden sm:grid grid-cols-2 gap-6">
+        {reviews.map((review) => (
+          <li key={review.id} className="h-full">
+            <ReviewCard review={review} />
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
@@ -167,8 +227,7 @@ export function ReviewsSection({
   const headingId = `${id ?? "reviews"}-heading`;
   const Heading = `h${headingLevel}` as "h2" | "h3";
   const hasReviews = reviews.length > 0;
-  const shown =
-    typeof limit === "number" ? reviews.slice(0, Math.max(0, limit)) : reviews;
+  const shown = typeof limit === "number" ? reviews.slice(0, Math.max(0, limit)) : reviews;
 
   return (
     <section
@@ -186,20 +245,9 @@ export function ReviewsSection({
 
         {hasReviews ? (
           <>
-            {/* Mobile: auto-sliding carousel (one at a time) */}
             <div className="mt-8">
-              <ReviewCarousel reviews={shown} />
+              <ReviewsDisplay reviews={shown} />
             </div>
-
-            {/* sm+: side-by-side 2-column grid — aria-hidden because carousel
-                is the semantic list; this is a visual duplicate for larger screens */}
-            <ul className="mt-8 hidden sm:grid grid-cols-2 gap-6" aria-hidden="true">
-              {shown.map((review) => (
-                <li key={review.id} className="h-full">
-                  <ReviewCard review={review} />
-                </li>
-              ))}
-            </ul>
 
             {viewAllHref && (
               <div className="mt-8">

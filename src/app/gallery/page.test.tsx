@@ -141,7 +141,8 @@ describe("GalleryGrid", () => {
     await user.click(allTab);
 
     expect(allTab).toHaveAttribute("aria-selected", "true");
-    const allPhotosList = allPhotos(photoCatalog);
+    // Count non-food photos (food_ images are excluded from the gallery)
+    const allPhotosList = allPhotos(photoCatalog).filter((p) => !p.id.includes("food_"));
     const listItems = screen.getAllByRole("listitem");
     expect(listItems).toHaveLength(allPhotosList.length);
   });

@@ -43,7 +43,8 @@ describe("ReviewsSection", () => {
   it("renders each review's reviewer name and review text (Req 11.1)", () => {
     render(<ReviewsSection reviews={sample} />);
     for (const review of sample) {
-      expect(screen.getByText(review.reviewerName)).toBeInTheDocument();
+      // Name is rendered as "— Name" attribution; match by content
+      expect(screen.getByText(new RegExp(review.reviewerName, "i"))).toBeInTheDocument();
       expect(screen.getByText(review.text)).toBeInTheDocument();
     }
   });
@@ -84,9 +85,9 @@ describe("ReviewsSection", () => {
 
     const items = screen.getAllByRole("listitem");
     expect(items).toHaveLength(2);
-    expect(screen.getByText("Guest A")).toBeInTheDocument();
-    expect(screen.getByText("Guest B")).toBeInTheDocument();
-    expect(screen.queryByText("Guest C")).not.toBeInTheDocument();
+    expect(screen.getByText(new RegExp("Guest A", "i"))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp("Guest B", "i"))).toBeInTheDocument();
+    expect(screen.queryByText(new RegExp("Guest C", "i"))).not.toBeInTheDocument();
   });
 
   it("renders a 'view all' link to the full section when given a href (Req 11.3)", () => {

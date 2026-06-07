@@ -125,9 +125,26 @@ function ReviewCard({ review }: { review: Review }) {
   return (
     <li className="h-full">
       <Card variant="review" className="h-full">
-        <CardTitle>{review.reviewerName}</CardTitle>
+        {/* Stars at the top */}
         {hasRating && <RatingDisplay rating={review.rating as number} />}
-        <CardBody className="mt-1">{review.text}</CardBody>
+
+        {/* Opening quote mark */}
+        <span
+          aria-hidden="true"
+          className="mt-3 block font-serif text-5xl leading-none text-primary/30 select-none"
+        >
+          &ldquo;
+        </span>
+
+        {/* Review text — italicised like a proper testimonial */}
+        <p className="mt-1 text-sm leading-relaxed text-on-surface italic">
+          {review.text}
+        </p>
+
+        {/* Reviewer name as attribution at the bottom */}
+        <p className="mt-4 border-t border-border pt-3 text-sm font-semibold text-secondary">
+          — {review.reviewerName}
+        </p>
       </Card>
     </li>
   );
@@ -168,7 +185,7 @@ export function ReviewsSection({
 
         {hasReviews ? (
           <>
-            <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
               {shown.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}

@@ -216,21 +216,26 @@ export function GalleryGrid({
   >("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  // Food images (food_*) are for the Inhouse Dining page only — exclude from gallery
+  const excludeFood = (photos: readonly Photo[]) =>
+    photos.filter((p) => !p.id.includes("food_"));
+
   // Derive the displayed photos from the active filter
-  const displayedPhotos: readonly Photo[] =
+  const displayedPhotos: readonly Photo[] = excludeFood(
     activeCategory === "all"
       ? allPhotos(photoCatalog)
-      : filterByCategory(photoCatalog, activeCategory);
+      : filterByCategory(photoCatalog, activeCategory),
+  );
 
-  // Photo counts per category for the tab badges
+  // Photo counts per category for the tab badges (also exclude food)
   const counts = Object.fromEntries(
     PHOTO_CATEGORY_IDS.map((id) => [
       id,
-      filterByCategory(photoCatalog, id).length,
+      excludeFood(filterByCategory(photoCatalog, id)).length,
     ]),
   ) as Record<PhotoCategoryId, number>;
 
-  const totalCount = allPhotos(photoCatalog).length;
+  const totalCount = excludeFood(allPhotos(photoCatalog)).length;
 
   const handlePhotoClick = useCallback((index: number) => {
     setLightboxIndex(index);

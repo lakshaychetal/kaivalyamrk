@@ -43,7 +43,7 @@ import { Icon } from "@/components/ui/Icon";
 import { rooms } from "@/content/rooms";
 import { filterByCategory } from "@/domain/gallery";
 import { photoCatalog } from "@/content/generated";
-import type { Photo, PhotoCategoryId, Room } from "@/content/types";
+import type { Photo, Room } from "@/content/types";
 import { buildPageMeta } from "@/domain/seo/seo";
 
 export const metadata: Metadata = buildPageMeta('rooms');
@@ -53,60 +53,19 @@ export const metadata: Metadata = buildPageMeta('rooms');
 // ---------------------------------------------------------------------------
 
 /**
- * Categories to draw room photos from, in priority order.
- * The task specifies interiors/ and architecture/ categories (Req 4.5).
- * We also include exteriors/ as a fallback so the page always has photos.
+ * Photo selection — use ONLY the specific client-provided room photos.
+ * Luxury Cottage: luxury_cottage_pic1–4 (exactly 4 photos)
+ * Classic Room:   classic_room_pic1–3   (exactly 3 photos)
+ * No generic interior/exterior photos are mixed in.
  */
-const LUXURY_COTTAGE_PHOTO_CATEGORIES: readonly PhotoCategoryId[] = [
-  "interiors",
-  "architecture",
-  "exteriors",
-];
-
-const CLASSIC_ROOM_PHOTO_CATEGORIES: readonly PhotoCategoryId[] = [
-  "interiors",
-  "exteriors",
-  "architecture",
-];
-
-/** Maximum photos to show per room to keep the page focused. */
-const MAX_PHOTOS_PER_ROOM = 4;
-
-/**
- * Collect up to `max` photos for a room. Photos whose id contains the
- * `preferredPrefix` are sorted to the front so the new room-specific images
- * (luxury_cottage_picN, classic_room_picN) always lead over generic ones.
- */
-function collectRoomPhotos(
-  categories: readonly PhotoCategoryId[],
-  max: number,
-  preferredPrefix: string,
-): Photo[] {
-  const collected: Photo[] = [];
-  for (const categoryId of categories) {
-    if (collected.length >= max) break;
-    const photos = filterByCategory(photoCatalog, categoryId);
-    const remaining = max - collected.length;
-    collected.push(...photos.slice(0, remaining));
-  }
-  // Sort: preferred (room-specific) photos first, others after
-  return [
-    ...collected.filter((p) => p.id.includes(preferredPrefix)),
-    ...collected.filter((p) => !p.id.includes(preferredPrefix)),
-  ].slice(0, max);
+function getRoomPhotos(prefix: string): Photo[] {
+  const all = filterByCategory(photoCatalog, "interiors");
+  return all.filter((p) => p.id.startsWith(`interiors__${prefix}`))
+    .sort((a, b) => a.id.localeCompare(b.id));
 }
 
-const luxuryCottagePhotos = collectRoomPhotos(
-  LUXURY_COTTAGE_PHOTO_CATEGORIES,
-  MAX_PHOTOS_PER_ROOM,
-  "luxury_cottage",
-);
-
-const classicRoomPhotos = collectRoomPhotos(
-  CLASSIC_ROOM_PHOTO_CATEGORIES,
-  MAX_PHOTOS_PER_ROOM,
-  "classic_room",
-);
+const luxuryCottagePhotos = getRoomPhotos("luxury_cottage");
+const classicRoomPhotos   = getRoomPhotos("classic_room");
 
 // ---------------------------------------------------------------------------
 // Sub-components

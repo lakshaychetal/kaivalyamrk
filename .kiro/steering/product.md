@@ -2,9 +2,9 @@
 
 ## Kaivalyam Homestay Website
 
-A professional, responsive marketing-and-booking website for **Kaivalyam Homestay** — a pet-friendly, tranquil hill-village homestay in Padichira, Wayanad, Kerala, India (about 10 km from Pulpally).
+A professional, responsive marketing-and-booking website for **Kaivalyam Homestay** — a tranquil hill-village homestay in Padichira, Wayanad, Kerala, India (about 10 km from Pulpally).
 
-**Brand tagline:** "EXPERIENCE ULTIMATE SOLITUDE #KAIVALYAM"
+**Brand tagline:** "EXPERIENCE SERENE SOLITUDE #KAIVALYAM"
 
 The name "Kaivalyam" means liberation and solitude of the soul. The brand voice is calm, natural, and warm, emphasizing seclusion, nature immersion, and long-stay hospitality.
 

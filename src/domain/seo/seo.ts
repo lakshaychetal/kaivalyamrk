@@ -541,7 +541,7 @@ export const KAIVALYAM_BUSINESS: LodgingBusinessConfig = {
   description:
     'A hill-village homestay in Padichira, Wayanad, Kerala — a tranquil retreat for nature immersion and serene solitude.',
   url: SITE_URL,
-  telephone: '+91 90000 00000',
+  telephone: '+91 80753 91908',
   email: 'stay@kaivalyamhomestay.com',
   image: [DEFAULT_OG_IMAGE.url],
   priceRange: '$$',

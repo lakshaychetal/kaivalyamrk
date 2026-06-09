@@ -10,8 +10,7 @@
  *
  *   • Req 3.1 — the meaning of "Kaivalyam" as liberation and solitude of the
  *               soul (`aboutContent.meaning`).
- *   • Req 3.2 — the pet-friendly, tranquil hill-village positioning suited to
- *               long-staying guests (`aboutContent.positioning`).
+ *   • Req 3.2 — tranquil, long-stay positioning
  *   • Req 3.3 — the Wayanad region story describing the natural and cultural
  *               setting (`aboutContent.wayanadStory`).
  *   • Req 3.4 — the signature offerings: guided tours, nature walks, local
@@ -210,7 +209,7 @@ export default function AboutPage() {
         {/* Req 3.1 — the meaning of "Kaivalyam". */}
         <ProseSection section={meaning} />
 
-        {/* Req 3.2 — pet-friendly, long-stay positioning. */}
+        {/* Req 3.2 — tranquil, long-stay positioning. */}
         <ProseSection section={positioning} />
 
         {/* Req 3.3 — the Wayanad region story (natural + cultural setting). */}

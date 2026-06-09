@@ -261,6 +261,55 @@ export default function AboutPage() {
             </ul>
           </section>
         )}
+
+        {/* Certifications & Licenses */}
+        <section aria-labelledby="licenses-heading">
+          <h2
+            id="licenses-heading"
+            className="font-serif text-2xl font-semibold text-secondary md:text-3xl"
+          >
+            Certifications &amp; Licenses
+          </h2>
+          <p className="mt-4 max-w-prose text-base leading-relaxed text-on-surface">
+            Kaivalyam operates with all required local authority certifications
+            issued by Mullankolly Grama Panchayat, Wayanad, Kerala.
+          </p>
+          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {[
+              {
+                slug: "license_478b",
+                label: "Enterprise License — Building 478/B",
+                license: "BFIF01-G120203-00048-2026",
+              },
+              {
+                slug: "license_478c",
+                label: "Enterprise License — Building 478/C",
+                license: "BFIF01-G120203-00047-2026",
+              },
+            ].map(({ slug, label, license }) => (
+              <li key={slug}>
+                <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm">
+                  {/* License image — page 1 only */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/licenses/${slug}.jpg`}
+                    alt={`${label} — License No. ${license}, Mullankolly Grama Panchayat, Wayanad`}
+                    className="w-full object-contain"
+                    loading="lazy"
+                    width={595}
+                    height={842}
+                  />
+                  <div className="border-t border-border px-4 py-3">
+                    <p className="text-sm font-semibold text-secondary">{label}</p>
+                    <p className="mt-0.5 text-xs text-on-surface-muted">
+                      License No. {license}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
         </div>
       </div>
     </article>

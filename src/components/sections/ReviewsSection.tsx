@@ -1,16 +1,13 @@
 /**
  * `ReviewsSection` — guest reviews & social proof (Req 11.1–11.4).
  *
- * Mobile  : CSS scroll-snap carousel — one card fills the screen at a time,
- *           swipeable left/right, auto-advances every 6 seconds.
- *           Prev/Next buttons + dot indicators for manual control.
- * sm+     : Standard 2-column side-by-side grid.
- *
- * Single DOM tree — no duplicate rendering.
+ * Mobile  : State-driven — ONLY the active card renders in the DOM at a time.
+ *           Auto-advances every 6 s. Prev/Next + dot indicators.
+ * sm+     : 2-column grid.
  */
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Star, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -78,88 +75,42 @@ function ReviewCard({ review }: { review: Review }) {
 }
 
 /**
- * On mobile: CSS scroll-snap + JS index tracking so one card is always
- * centred. Auto-advances every 6 s. Prev/Next arrows + dot nav.
- * On sm+: plain 2-column grid (scroll container hidden via CSS).
+ * Mobile: only ONE card in the DOM at a time (state-driven).
+ * Desktop (sm+): all cards in a 2-column grid.
  */
 function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [idx, setIdx] = useState(0);
   const count = reviews.length;
 
-  /* Scroll the snap container to the target slide */
-  const scrollTo = useCallback((idx: number) => {
-    const container = scrollRef.current;
-    if (!container) return;
-    const slide = container.children[idx] as HTMLElement | undefined;
-    if (slide) {
-      container.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
-    }
-    setActiveIdx(idx);
-  }, []);
+  const goPrev = useCallback(() => setIdx((i) => (i - 1 + count) % count), [count]);
+  const goNext = useCallback(() => setIdx((i) => (i + 1) % count), [count]);
 
-  const goPrev = useCallback(() => scrollTo((activeIdx - 1 + count) % count), [activeIdx, count, scrollTo]);
-  const goNext = useCallback(() => scrollTo((activeIdx + 1) % count), [activeIdx, count, scrollTo]);
-
-  /* Auto-advance every 6 seconds */
+  /* Auto-advance every 6 s */
   useEffect(() => {
     if (count < 2) return;
-    const t = setInterval(() => {
-      setActiveIdx((i) => {
-        const next = (i + 1) % count;
-        const container = scrollRef.current;
-        if (container) {
-          const slide = container.children[next] as HTMLElement | undefined;
-          if (slide) container.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
-        }
-        return next;
-      });
-    }, 6000);
+    const t = setInterval(() => setIdx((i) => (i + 1) % count), 6000);
     return () => clearInterval(t);
   }, [count]);
 
-  /* Keep activeIdx in sync when user swipes manually */
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-    const onScroll = () => {
-      const idx = Math.round(container.scrollLeft / container.clientWidth);
-      setActiveIdx(idx);
-    };
-    container.addEventListener("scroll", onScroll, { passive: true });
-    return () => container.removeEventListener("scroll", onScroll);
-  }, []);
+  const current = reviews[idx]!;
 
   return (
     <>
-      {/* ── MOBILE: scroll-snap carousel (hidden on sm+) ── */}
+      {/* ── MOBILE: one card at a time (below sm breakpoint) ── */}
       <div className="sm:hidden">
-        {/* Snap container — overflow-x scroll, each child = full width */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
-          style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
-          aria-label="Guest reviews"
-        >
-          {reviews.map((review) => (
-            <div
-              key={review.id}
-              className="flex-none w-full snap-center"
-            >
-              <ReviewCard review={review} />
-            </div>
-          ))}
+        {/* Only the active card renders */}
+        <div key={current.id} className="w-full">
+          <ReviewCard review={current} />
         </div>
 
-        {/* Controls: prev · dots · next */}
         {count > 1 && (
-          <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="mt-5 flex items-center justify-between gap-3">
             <button
               type="button"
               aria-label="Previous review"
               onClick={goPrev}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
+                "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
                 "bg-surface-alt border border-border text-on-surface",
                 "hover:bg-primary hover:text-on-primary hover:border-primary",
                 "motion-safe:transition motion-safe:duration-150",
@@ -169,17 +120,17 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
               <ChevronLeft size={18} aria-hidden />
             </button>
 
-            {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-2" aria-hidden="true">
+            {/* Dots */}
+            <div className="flex items-center gap-2" aria-hidden="true">
               {Array.from({ length: count }, (_, i) => (
                 <button
                   key={i}
                   type="button"
-                  onClick={() => scrollTo(i)}
+                  onClick={() => setIdx(i)}
                   aria-label={`Go to review ${i + 1}`}
                   className={cn(
                     "h-2 rounded-full motion-safe:transition-all motion-safe:duration-300",
-                    i === activeIdx ? "w-6 bg-primary" : "w-2 bg-border",
+                    i === idx ? "w-6 bg-primary" : "w-2 bg-border hover:bg-on-surface-muted",
                   )}
                 />
               ))}
@@ -190,7 +141,7 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
               aria-label="Next review"
               onClick={goNext}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
+                "flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
                 "bg-surface-alt border border-border text-on-surface",
                 "hover:bg-primary hover:text-on-primary hover:border-primary",
                 "motion-safe:transition motion-safe:duration-150",
@@ -201,9 +152,16 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
             </button>
           </div>
         )}
+
+        {/* Counter e.g. "1 / 2" */}
+        {count > 1 && (
+          <p className="mt-3 text-center text-xs text-on-surface-muted">
+            {idx + 1} / {count}
+          </p>
+        )}
       </div>
 
-      {/* ── DESKTOP (sm+): 2-column grid ── */}
+      {/* ── DESKTOP (sm+): 2-column grid, all cards visible ── */}
       <ul className="hidden sm:grid grid-cols-2 gap-6">
         {reviews.map((review) => (
           <li key={review.id} className="h-full">

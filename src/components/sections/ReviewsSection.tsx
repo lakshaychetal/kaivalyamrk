@@ -96,8 +96,8 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
 
   return (
     <>
-      {/* ── MOBILE: one card at a time (below sm breakpoint) ── */}
-      <div className="sm:hidden">
+      {/* ── MOBILE: one card at a time (below md/tablet breakpoint) ── */}
+      <div className="md:hidden">
         {/* Only the active card renders */}
         <div key={current.id} className="w-full">
           <ReviewCard review={current} />
@@ -161,8 +161,8 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
         )}
       </div>
 
-      {/* ── DESKTOP (sm+): 2-column grid, all cards visible ── */}
-      <ul className="hidden sm:grid grid-cols-2 gap-6">
+      {/* ── DESKTOP (md+): 2-column grid, all cards visible ── */}
+      <ul className="hidden md:grid grid-cols-2 gap-6">
         {reviews.map((review) => (
           <li key={review.id} className="h-full">
             <ReviewCard review={review} />

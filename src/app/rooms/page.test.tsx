@@ -213,10 +213,10 @@ describe("Rooms page (Req 4.1–4.6)", () => {
     }
   });
 
-  it("booking CTAs resolve to the configured booking engine URL (Req 4.6)", () => {
+  it("booking CTAs resolve to the in-site enquiry page (Req 4.6)", () => {
     render(<RoomsPage />);
 
-    // All booking links on the page should point to the eeabsolute booking engine.
+    // All booking links on the page should point to the /book enquiry form.
     const allLinks = screen.getAllByRole("link");
     const bookingLinks = allLinks.filter((link) =>
       /book/i.test(link.textContent ?? link.getAttribute("aria-label") ?? ""),
@@ -226,8 +226,8 @@ describe("Rooms page (Req 4.1–4.6)", () => {
 
     for (const link of bookingLinks) {
       const href = link.getAttribute("href") ?? "";
-      // Every booking link must point to the eeabsolute booking engine.
-      expect(href).toMatch(/eeabsolute\.com/);
+      // Every booking link routes to the in-site lead/enquiry form.
+      expect(href).toBe("/book");
     }
   });
 });

@@ -30,15 +30,11 @@
 const WA_ME_BASE = "https://wa.me";
 
 /**
- * PLACEHOLDER — Kaivalyam Homestay's WhatsApp / WATI business number.
- *
- * ⚠️ This is NOT the real number. The actual WATI/business WhatsApp number is
- * provided later (during content authoring / environment configuration) and
- * MUST replace this constant. It is written in human-readable international
- * form here; `buildWhatsAppUrl` normalizes it to digits for the deep link
- * (`+91 90000 00000` → `919000000000`).
+ * Kaivalyam Homestay's WhatsApp business number.
+ * Human-readable international form; `buildWhatsAppUrl` normalizes it to digits
+ * (`+91 80753 91908` → `918075391908`).
  */
-export const KAIVALYAM_WHATSAPP_NUMBER = "+91 90000 00000";
+export const KAIVALYAM_WHATSAPP_NUMBER = "+91 80753 91908";
 
 /** Options for {@link buildWhatsAppUrl}. */
 export interface WhatsAppLinkOptions {

@@ -205,10 +205,8 @@ function RoomSection({
           <div className="mt-auto pt-2">
             <BookNowButton
               label="Book This Room"
-              href={room.bookingHref}
-              external
               size="lg"
-              aria-label={`Book the ${room.name}`}
+              aria-label={`Enquire about the ${room.name}`}
             />
           </div>
         </div>

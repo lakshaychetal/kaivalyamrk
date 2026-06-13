@@ -85,10 +85,10 @@ function ReviewsDisplay({ reviews }: { reviews: readonly Review[] }) {
   const goPrev = useCallback(() => setIdx((i) => (i - 1 + count) % count), [count]);
   const goNext = useCallback(() => setIdx((i) => (i + 1) % count), [count]);
 
-  /* Auto-advance every 6 s */
+  /* Auto-advance every 12 s — long testimonials need time to read fully */
   useEffect(() => {
     if (count < 2) return;
-    const t = setInterval(() => setIdx((i) => (i + 1) % count), 6000);
+    const t = setInterval(() => setIdx((i) => (i + 1) % count), 12000);
     return () => clearInterval(t);
   }, [count]);
 

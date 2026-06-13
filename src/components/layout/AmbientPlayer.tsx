@@ -14,9 +14,10 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Music, VolumeX, MessageCircle } from "lucide-react";
+import { Music, VolumeX } from "lucide-react";
 import { cn } from "@/components/ui/cn";
 import { focusRing } from "@/components/ui/buttonStyles";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { buildWhatsAppUrl } from "@/domain/integration-urls/whatsapp-url";
 import { siteInfo } from "@/content/site";
 
@@ -96,7 +97,7 @@ export function AmbientPlayer() {
           focusRing,
         )}
       >
-        <MessageCircle size={22} aria-hidden strokeWidth={2} />
+        <WhatsAppIcon size={24} className="text-white" />
       </a>
     </div>
   );

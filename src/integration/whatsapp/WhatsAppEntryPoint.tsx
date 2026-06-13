@@ -40,13 +40,12 @@
  * No hooks / no event handlers → this is a server-renderable component (good
  * for the SSG marketing pages); it holds no secrets.
  */
-import { MessageCircle } from "lucide-react";
 import {
   buildWhatsAppUrl,
   KAIVALYAM_WHATSAPP_NUMBER,
 } from "@/domain/integration-urls/whatsapp-url";
 import { siteInfo } from "@/content/site";
-import { Icon } from "@/components/ui/Icon";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { cn, type ClassValue } from "@/components/ui/cn";
 import { focusRing } from "@/components/ui/buttonStyles";
 
@@ -148,7 +147,7 @@ export function WhatsAppEntryPoint({
         {...externalLinkProps}
       >
         {/* Icon is decorative — the anchor's aria-label names the control. */}
-        <Icon icon={MessageCircle} size="lg" />
+        <WhatsAppIcon size={28} />
       </a>
     );
   }
@@ -166,7 +165,7 @@ export function WhatsAppEntryPoint({
       {...externalLinkProps}
     >
       {/* Decorative icon; the visible label below is the accessible name. */}
-      <Icon icon={MessageCircle} size={size === "lg" ? "lg" : "md"} />
+      <WhatsAppIcon size={size === "lg" ? 24 : 20} />
       {label}
     </a>
   );

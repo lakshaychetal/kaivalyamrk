@@ -198,8 +198,8 @@ export function LeadForm() {
             className={cn(fieldBase, "resize-y")}
           />
           <p className="mt-1.5 text-xs text-on-surface-muted">
-            A minimum stay may apply during peak season. Tell us your plans and
-            we will confirm availability.
+            A minimum stay of two days is recommended to fully enjoy the
+            property and explore the surrounding area.
           </p>
         </div>
       </div>

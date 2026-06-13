@@ -8,7 +8,7 @@
  * Guests can also reach out directly via WhatsApp or phone.
  */
 import type { Metadata } from "next";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 import { LeadForm } from "@/components/sections/LeadForm";
 import { WhatsAppEntryPoint } from "@/integration/whatsapp";

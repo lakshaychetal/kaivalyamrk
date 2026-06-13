@@ -57,13 +57,19 @@ export const reviews: readonly Review[] = [
   {
     id: 'review-anand-th',
     reviewerName: 'Anand TH, Qatar',
-    text: 'A peaceful retreat, well away from the town center. From waking up to birdsong and reading in the library to watching the sunset from the roof balcony, every moment here feels like a proper escape from city life. The warm hosts treat everyone — including kids — like royalty, offering flawless 24-hour assistance, cozy campfire evenings, and refreshing plantation walks. Ultimately, it is the exceptional, home-cooked Keralite food that serves as the true highlight of the trip, making this peaceful haven a genuinely unforgettable place to stay.',
+    text: 'A peaceful retreat, well away from the town center. From waking up to birdsong and reading in the library to watching the sunset from the roof balcony, every moment here feels like a proper escape from city life. The warm hosts treat everyone — including kids and family pets — like royalty, offering flawless 24-hour assistance, cozy campfire evenings, and refreshing plantation walks. Ultimately, it is the exceptional, home-cooked Keralite food that serves as the true highlight of the trip, making this peaceful haven a genuinely unforgettable place to stay.',
     rating: 5,
   },
   {
     id: 'review-manoj-madhavan',
     reviewerName: 'Manoj Madhavan, Chennai',
     text: 'Our stay at Kaivalyam Homestay in Padichira, Wayanad, was absolutely wonderful! The peaceful surroundings and beautiful green views made it the perfect getaway for our family. The hosts were incredibly warm and welcoming, treating us just like family from the moment we arrived. The highlight was identifying birds from bird calls using a mobile app suggested by the owner — we were able to identify 25 birds at one point. The supporting staff were extremely humble, helpful and friendly. We loved the clean, cozy rooms and the delicious home-cooked meals that tasted amazing. It was so nice to unplug, relax together, and enjoy the fresh air. In short, it was a home away from home, far away from the madding crowd. We left with full hearts and great memories, and we cannot wait to visit again!',
+    rating: 5,
+  },
+  {
+    id: 'review-ajay-kumar-mc',
+    reviewerName: 'Ajay Kumar MC, KSA',
+    text: 'A serene and calming retreat tucked away in the lush greenery of Wayanad. The surroundings are peaceful and restorative, with fresh mountain air and a quiet that instantly slows you down. What truly stood out was the exceptional care shown by the hosts. When I arrived unwell with a cold and without adequate warm clothing, they immediately provided a jacket and made sure I was comfortable. Their support went far beyond hospitality — one of the staff personally drove me to a clinic, stayed with me throughout the consultation, and ensured I returned safely. That level of genuine concern made a difficult moment much easier. This is not just a place to stay, but a place where you feel looked after like family. A memorable experience of warmth, care, and calm in the heart of nature.',
     rating: 5,
   },
 ] as const;

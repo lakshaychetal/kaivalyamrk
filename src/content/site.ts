@@ -44,10 +44,10 @@ export interface PostalAddress {
 
 /** Map location for the embedded Wayanad map + directions (Req 9.4). */
 export interface MapLocation {
-  /** Latitude in decimal degrees (APPROXIMATE — confirm pin). */
-  lat: number;
-  /** Longitude in decimal degrees (APPROXIMATE — confirm pin). */
-  lng: number;
+  /** Latitude in decimal degrees. Optional — omit to embed by place name. */
+  lat?: number;
+  /** Longitude in decimal degrees. Optional — omit to embed by place name. */
+  lng?: number;
   /** Human-readable query for a map embed / search. */
   embedQuery: string;
 }
@@ -91,13 +91,12 @@ export const address: PostalAddress = {
 /**
  * Map location for the embedded Wayanad map (Req 9.4).
  *
- * ⚠️ APPROXIMATE pin near Padichira/Pulpally — kept consistent with
- * `KAIVALYAM_DIRECTIONS_CONFIG` in the directions URL builder. Confirm the exact
- * property pin with the client before launch.
+ * The embed resolves by PLACE NAME so it pins the owner-verified Google Maps
+ * business listing for Kaivalyam Homestay (the same place behind the verified
+ * share link used for "Get Directions"). No hard-coded coordinates, so the
+ * embed never drifts from the confirmed pin.
  */
 export const mapLocation: MapLocation = {
-  lat: 11.8126,
-  lng: 76.1059,
   embedQuery: 'Kaivalyam Homestay, Padichira, Pulpally, Wayanad, Kerala, India',
 };
 

@@ -147,6 +147,15 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
+                <a
+                  href={`tel:${siteInfo.landline.replace(/\s+/g, "")}`}
+                  className={footerLink}
+                >
+                  <Icon icon={Phone} size="sm" />
+                  <span>{siteInfo.landline}</span>
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${siteInfo.email}`} className={footerLink}>
                   <Icon icon={Mail} size="sm" />
                   <span>{siteInfo.email}</span>

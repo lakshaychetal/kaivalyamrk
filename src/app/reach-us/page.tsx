@@ -32,10 +32,7 @@ import { Car, MapPin, Navigation, Plane, Train } from "lucide-react";
 import { Icon } from "@/components/ui/Icon";
 import { cn } from "@/components/ui/cn";
 import { buttonClassNames, focusRing } from "@/components/ui/buttonStyles";
-import {
-  buildDirectionsUrl,
-  KAIVALYAM_DIRECTIONS_CONFIG,
-} from "@/domain/integration-urls/directions-url";
+import { KAIVALYAM_DIRECTIONS_URL } from "@/domain/integration-urls/directions-url";
 import {
   roadRoutes,
   transportHubs,
@@ -47,7 +44,7 @@ import { buildPageMeta } from "@/domain/seo/seo";
 export const metadata: Metadata = buildPageMeta('reach-us');
 
 /** The canonical "Get Directions" URL for this page (Req 10.4). */
-const directionsUrl = buildDirectionsUrl(KAIVALYAM_DIRECTIONS_CONFIG);
+const directionsUrl = KAIVALYAM_DIRECTIONS_URL;
 
 /** Shared treatment for the external "Get Directions" link. */
 const directionsLinkClass = cn(

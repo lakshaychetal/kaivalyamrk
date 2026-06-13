@@ -17,12 +17,9 @@ import { render, screen } from "@testing-library/react";
 
 import ReachUsPage, { metadata } from "./page";
 import { roadRoutes, transportHubs, propertyLocation } from "@/content/reach-us";
-import {
-  buildDirectionsUrl,
-  KAIVALYAM_DIRECTIONS_CONFIG,
-} from "@/domain/integration-urls/directions-url";
+import { KAIVALYAM_DIRECTIONS_URL } from "@/domain/integration-urls/directions-url";
 
-const directionsUrl = buildDirectionsUrl(KAIVALYAM_DIRECTIONS_CONFIG);
+const directionsUrl = KAIVALYAM_DIRECTIONS_URL;
 
 describe("Reach Us page — metadata (Req 21.1)", () => {
   it("declares the correct page title", () => {
@@ -154,14 +151,14 @@ describe("Reach Us page — Get Directions action (Req 10.4)", () => {
     expect(links.length).toBeGreaterThan(0);
   });
 
-  it("the Get Directions link points to the buildDirectionsUrl destination", () => {
+  it("the Get Directions link points to the verified location URL", () => {
     render(<ReachUsPage />);
     const links = screen
       .getAllByRole("link", { name: /get directions/i })
       .filter((a) => a.getAttribute("href") === directionsUrl);
     expect(links.length).toBeGreaterThan(0);
-    // Confirm the URL is a valid Google Maps directions URL
-    expect(directionsUrl).toMatch(/^https:\/\/www\.google\.com\/maps\/dir\/\?/);
+    // Confirm the URL is the owner-verified Google share link.
+    expect(directionsUrl).toMatch(/^https:\/\/share\.google\//);
   });
 
   it("the Get Directions link opens in a separate browser context", () => {

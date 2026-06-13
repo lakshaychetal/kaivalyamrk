@@ -26,10 +26,10 @@ export const attractions: AttractionItem[] = [
     "category": "historic_sites_gardens",
     "image": {
       "id": "historic_sites_gardens__banasura_spices_garden",
-      "src": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-1200.jpg",
+      "src": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.jpg",
       "alt": "Banasura Spices Garden — Historic Sites & Gardens near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 850,
+      "width": 960,
+      "height": 540,
       "source": "wikimedia",
       "attribution": {
         "author": "Bishnu Sarangi (Wikimedia Commons)",
@@ -186,10 +186,10 @@ export const attractions: AttractionItem[] = [
     "category": "dams_caverns_caves",
     "image": {
       "id": "dams_caverns_caves__edakkal_caves",
-      "src": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-1200.jpg",
+      "src": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.jpg",
       "alt": "Edakkal Caves — Dams, Caverns & Caves near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 853,
+      "width": 791,
+      "height": 441,
       "source": "wikimedia",
       "attribution": {
         "author": "PP Yoonus (Wikimedia Commons)",
@@ -499,10 +499,10 @@ export const attractions: AttractionItem[] = [
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__ganapathi_temple_bathery",
-      "src": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-1200.jpg",
+      "src": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.jpg",
       "alt": "Ganapathi Temple Bathery — Religious Sites near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 720,
+      "width": 640,
+      "height": 480,
       "source": "wikimedia",
       "attribution": {
         "author": "Manoj K. Prabhakaran (Wikimedia Commons)",
@@ -520,10 +520,10 @@ export const attractions: AttractionItem[] = [
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__seethadevi_temple",
-      "src": "/generated/attractions/e1_hindu_temples/seethadevi_temple-1200.jpg",
+      "src": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.jpg",
       "alt": "Seethadevi Temple — Religious Sites near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 1707,
+      "width": 600,
+      "height": 450,
       "source": "wikimedia",
       "attribution": {
         "author": "Rojypala (Wikimedia Commons)",
@@ -541,10 +541,10 @@ export const attractions: AttractionItem[] = [
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__thirunelli_temple",
-      "src": "/generated/attractions/e1_hindu_temples/thirunelli_temple-1200.jpg",
+      "src": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.jpg",
       "alt": "Thirunelli Temple — Religious Sites near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 853,
+      "width": 640,
+      "height": 484,
       "source": "wikimedia",
       "attribution": {
         "author": "Sreejithk2000 (Wikimedia Commons)",
@@ -586,7 +586,7 @@ export const attractions: AttractionItem[] = [
       "src": "/generated/attractions/e1_hindu_temples/valliyoorkkavu-1200.jpg",
       "alt": "Valliyoorkkavu — Religious Sites near Kaivalyam Homestay, Wayanad",
       "width": 1280,
-      "height": 960,
+      "height": 720,
       "source": "wikimedia",
       "attribution": {
         "author": "Challiyan (Wikimedia Commons)",
@@ -667,10 +667,10 @@ export const attractions: AttractionItem[] = [
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__latin_church_wayanad",
-      "src": "/generated/attractions/e3_christian_churches/latin_church_wayanad-1200.jpg",
+      "src": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.jpg",
       "alt": "Latin Church Wayanad — Religious Sites near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 958,
+      "width": 725,
+      "height": 481,
       "source": "wikimedia",
       "attribution": {
         "author": "Aruna Radhakrishnan (Wikimedia Commons)",
@@ -1069,7 +1069,7 @@ export const attractions: AttractionItem[] = [
       "src": "/generated/attractions/h_bodies_of_water/papanashini_river-1200.jpg",
       "alt": "Papanashini River — Bodies of Water near Kaivalyam Homestay, Wayanad",
       "width": 1280,
-      "height": 960,
+      "height": 720,
       "source": "wikimedia",
       "attribution": {
         "author": "Bishnu Sarangi (Wikimedia Commons)",
@@ -1146,10 +1146,10 @@ export const attractions: AttractionItem[] = [
     "category": "ayurveda_spas",
     "image": {
       "id": "ayurveda_spas__spa_wellness",
-      "src": "/generated/attractions/i_ayurveda_spas/spa_wellness-1200.jpg",
+      "src": "/generated/attractions/i_ayurveda_spas/spa_wellness-800.jpg",
       "alt": "Spa Wellness — Ayurveda & Spas near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 841,
+      "width": 960,
+      "height": 540,
       "source": "wikimedia",
       "attribution": {
         "author": "Rojypala (Wikimedia Commons)",
@@ -1352,10 +1352,10 @@ export const attractions: AttractionItem[] = [
     "category": "art_galleries_theme_parks",
     "image": {
       "id": "art_galleries_theme_parks__theme_park",
-      "src": "/generated/attractions/k_theme_parks_museums/theme_park-1200.jpg",
+      "src": "/generated/attractions/k_theme_parks_museums/theme_park-800.jpg",
       "alt": "Theme Park — Art Galleries & Theme Parks near Kaivalyam Homestay, Wayanad",
-      "width": 1280,
-      "height": 960,
+      "width": 853,
+      "height": 556,
       "source": "wikimedia",
       "attribution": {
         "author": "Manoj K. Prabhakaran (Wikimedia Commons)",

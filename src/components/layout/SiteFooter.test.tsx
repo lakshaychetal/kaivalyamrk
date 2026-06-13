@@ -34,9 +34,18 @@ describe("SiteFooter", () => {
     render(<SiteFooter />);
     const footer = screen.getByRole("contentinfo");
 
-    const phone = within(footer).getByRole("link", { name: /\+91/ });
+    const phone = within(footer).getByRole("link", {
+      name: siteInfo.phone,
+    });
     expect(phone.getAttribute("href")).toBe(
       `tel:${siteInfo.phone.replace(/\s+/g, "")}`,
+    );
+
+    const landline = within(footer).getByRole("link", {
+      name: siteInfo.landline,
+    });
+    expect(landline.getAttribute("href")).toBe(
+      `tel:${siteInfo.landline.replace(/\s+/g, "")}`,
     );
 
     const email = within(footer).getByRole("link", { name: siteInfo.email });

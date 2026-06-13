@@ -64,7 +64,7 @@ function assertFooterIsComplete(): void {
   ).toBeGreaterThan(0);
 
   // 2. Contact summary (Req 1.7): phone, email, and WhatsApp entry points.
-  const phone = within(footer).getByRole("link", { name: /\+91/ });
+  const phone = within(footer).getByRole("link", { name: siteInfo.phone });
   expect(phone.getAttribute("href")).toBe(
     `tel:${siteInfo.phone.replace(/\s+/g, "")}`,
   );

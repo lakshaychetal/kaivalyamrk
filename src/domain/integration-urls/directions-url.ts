@@ -104,10 +104,12 @@ export const KAIVALYAM_DIRECTIONS_CONFIG: DirectionsConfig = {
 };
 
 /**
- * Convenience pre-built directions URL for Kaivalyam, so the Contact (13.1)
- * and Reach Us (11.6) pages can reuse a single canonical "Get Directions"
- * destination without re-deriving it.
+ * The owner-verified Google Maps share link for Kaivalyam Homestay. This is the
+ * exact pin the client confirmed, so it is the canonical "Get Directions"
+ * destination reused by the Contact (13.1) and Reach Us (11.6) pages. Opening it
+ * lands on the verified place card, from which the map app offers turn-by-turn
+ * directions. Preferred over a re-derived coordinate link because it always
+ * resolves to the confirmed location.
  */
-export const KAIVALYAM_DIRECTIONS_URL: string = buildDirectionsUrl(
-  KAIVALYAM_DIRECTIONS_CONFIG,
-);
+export const KAIVALYAM_DIRECTIONS_URL =
+  "https://share.google/zQtEaVJ0WmRI27aww" as const;

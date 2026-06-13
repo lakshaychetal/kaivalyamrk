@@ -62,10 +62,8 @@ describe("Contact page — Get Directions action (Req 9.2, 9.5)", () => {
       .getAllByRole("link", { name: /get directions/i })
       .filter((a) => a.getAttribute("href") === KAIVALYAM_DIRECTIONS_URL);
     expect(links.length).toBeGreaterThan(0);
-    // The destination really is the external Google Maps directions URL.
-    expect(KAIVALYAM_DIRECTIONS_URL).toMatch(
-      /^https:\/\/www\.google\.com\/maps\/dir\/\?/,
-    );
+    // The destination really is the owner-verified Google share link.
+    expect(KAIVALYAM_DIRECTIONS_URL).toMatch(/^https:\/\/share\.google\//);
   });
 
   it("opens the directions link in a separate browser context", () => {

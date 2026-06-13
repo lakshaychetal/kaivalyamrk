@@ -1765,26 +1765,25 @@ export const imageVariants: ImageVariantMap = {
   },
   "historic_sites_gardens__banasura_spices_garden": {
     "id": "historic_sites_gardens__banasura_spices_garden",
-    "src": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-1200.jpg",
-    "width": 1280,
-    "height": 850,
+    "src": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.jpg",
+    "width": 960,
+    "height": 540,
     "widths": [
       400,
-      800,
-      1200
+      800
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.avif 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.avif 800w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-1200.avif 1200w"
+        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.avif 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.avif 800w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.webp 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.webp 800w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-1200.webp 1200w"
+        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.webp 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.webp 800w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.jpg 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.jpg 800w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/a_historic_sites_gardens/banasura_spices_garden-400.jpg 400w, /generated/attractions/a_historic_sites_gardens/banasura_spices_garden-800.jpg 800w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -1973,26 +1972,24 @@ export const imageVariants: ImageVariantMap = {
   },
   "dams_caverns_caves__edakkal_caves": {
     "id": "dams_caverns_caves__edakkal_caves",
-    "src": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-1200.jpg",
-    "width": 1280,
-    "height": 853,
+    "src": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.jpg",
+    "width": 791,
+    "height": 441,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.avif 400w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-800.avif 800w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-1200.avif 1200w"
+        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.webp 400w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-800.webp 800w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-1200.webp 1200w"
+        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.jpg 400w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-800.jpg 800w, /generated/attractions/b_dams_caverns_caves/edakkal_caves-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/b_dams_caverns_caves/edakkal_caves-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -2386,78 +2383,72 @@ export const imageVariants: ImageVariantMap = {
   },
   "religious_sites__ganapathi_temple_bathery": {
     "id": "religious_sites__ganapathi_temple_bathery",
-    "src": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-1200.jpg",
-    "width": 1280,
-    "height": 720,
+    "src": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.jpg",
+    "width": 640,
+    "height": 480,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.avif 400w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-800.avif 800w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-1200.avif 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.webp 400w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-800.webp 800w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-1200.webp 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.jpg 400w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-800.jpg 800w, /generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/ganapathi_temple_bathery-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
   "religious_sites__seethadevi_temple": {
     "id": "religious_sites__seethadevi_temple",
-    "src": "/generated/attractions/e1_hindu_temples/seethadevi_temple-1200.jpg",
-    "width": 1280,
-    "height": 1707,
+    "src": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.jpg",
+    "width": 600,
+    "height": 450,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.avif 400w, /generated/attractions/e1_hindu_temples/seethadevi_temple-800.avif 800w, /generated/attractions/e1_hindu_temples/seethadevi_temple-1200.avif 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.webp 400w, /generated/attractions/e1_hindu_temples/seethadevi_temple-800.webp 800w, /generated/attractions/e1_hindu_temples/seethadevi_temple-1200.webp 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.jpg 400w, /generated/attractions/e1_hindu_temples/seethadevi_temple-800.jpg 800w, /generated/attractions/e1_hindu_temples/seethadevi_temple-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/seethadevi_temple-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
   "religious_sites__thirunelli_temple": {
     "id": "religious_sites__thirunelli_temple",
-    "src": "/generated/attractions/e1_hindu_temples/thirunelli_temple-1200.jpg",
-    "width": 1280,
-    "height": 853,
+    "src": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.jpg",
+    "width": 640,
+    "height": 484,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.avif 400w, /generated/attractions/e1_hindu_temples/thirunelli_temple-800.avif 800w, /generated/attractions/e1_hindu_temples/thirunelli_temple-1200.avif 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.webp 400w, /generated/attractions/e1_hindu_temples/thirunelli_temple-800.webp 800w, /generated/attractions/e1_hindu_temples/thirunelli_temple-1200.webp 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.jpg 400w, /generated/attractions/e1_hindu_temples/thirunelli_temple-800.jpg 800w, /generated/attractions/e1_hindu_temples/thirunelli_temple-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/e1_hindu_temples/thirunelli_temple-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -2492,7 +2483,7 @@ export const imageVariants: ImageVariantMap = {
     "id": "religious_sites__valliyoorkkavu",
     "src": "/generated/attractions/e1_hindu_temples/valliyoorkkavu-1200.jpg",
     "width": 1280,
-    "height": 960,
+    "height": 720,
     "widths": [
       400,
       800,
@@ -2592,26 +2583,24 @@ export const imageVariants: ImageVariantMap = {
   },
   "religious_sites__latin_church_wayanad": {
     "id": "religious_sites__latin_church_wayanad",
-    "src": "/generated/attractions/e3_christian_churches/latin_church_wayanad-1200.jpg",
-    "width": 1280,
-    "height": 958,
+    "src": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.jpg",
+    "width": 725,
+    "height": 481,
     "widths": [
-      400,
-      800,
-      1200
+      400
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.avif 400w, /generated/attractions/e3_christian_churches/latin_church_wayanad-800.avif 800w, /generated/attractions/e3_christian_churches/latin_church_wayanad-1200.avif 1200w"
+        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.avif 400w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.webp 400w, /generated/attractions/e3_christian_churches/latin_church_wayanad-800.webp 800w, /generated/attractions/e3_christian_churches/latin_church_wayanad-1200.webp 1200w"
+        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.webp 400w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.jpg 400w, /generated/attractions/e3_christian_churches/latin_church_wayanad-800.jpg 800w, /generated/attractions/e3_christian_churches/latin_church_wayanad-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.jpg 400w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -3113,7 +3102,7 @@ export const imageVariants: ImageVariantMap = {
     "id": "bodies_of_water__papanashini_river",
     "src": "/generated/attractions/h_bodies_of_water/papanashini_river-1200.jpg",
     "width": 1280,
-    "height": 960,
+    "height": 720,
     "widths": [
       400,
       800,
@@ -3215,26 +3204,25 @@ export const imageVariants: ImageVariantMap = {
   },
   "ayurveda_spas__spa_wellness": {
     "id": "ayurveda_spas__spa_wellness",
-    "src": "/generated/attractions/i_ayurveda_spas/spa_wellness-1200.jpg",
-    "width": 1280,
-    "height": 841,
+    "src": "/generated/attractions/i_ayurveda_spas/spa_wellness-800.jpg",
+    "width": 960,
+    "height": 540,
     "widths": [
       400,
-      800,
-      1200
+      800
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.avif 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.avif 800w, /generated/attractions/i_ayurveda_spas/spa_wellness-1200.avif 1200w"
+        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.avif 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.avif 800w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.webp 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.webp 800w, /generated/attractions/i_ayurveda_spas/spa_wellness-1200.webp 1200w"
+        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.webp 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.webp 800w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.jpg 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.jpg 800w, /generated/attractions/i_ayurveda_spas/spa_wellness-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/i_ayurveda_spas/spa_wellness-400.jpg 400w, /generated/attractions/i_ayurveda_spas/spa_wellness-800.jpg 800w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -3499,26 +3487,25 @@ export const imageVariants: ImageVariantMap = {
   },
   "art_galleries_theme_parks__theme_park": {
     "id": "art_galleries_theme_parks__theme_park",
-    "src": "/generated/attractions/k_theme_parks_museums/theme_park-1200.jpg",
-    "width": 1280,
-    "height": 960,
+    "src": "/generated/attractions/k_theme_parks_museums/theme_park-800.jpg",
+    "width": 853,
+    "height": 556,
     "widths": [
       400,
-      800,
-      1200
+      800
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.avif 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.avif 800w, /generated/attractions/k_theme_parks_museums/theme_park-1200.avif 1200w"
+        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.avif 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.avif 800w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.webp 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.webp 800w, /generated/attractions/k_theme_parks_museums/theme_park-1200.webp 1200w"
+        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.webp 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.webp 800w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.jpg 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.jpg 800w, /generated/attractions/k_theme_parks_museums/theme_park-1200.jpg 1200w"
+        "srcSet": "/generated/attractions/k_theme_parks_museums/theme_park-400.jpg 400w, /generated/attractions/k_theme_parks_museums/theme_park-800.jpg 800w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -14,7 +14,7 @@
  *      a "View Rooms" link to /rooms.
  *   4. Facilities summary (Req 2.5) — 5 key facilities with icons and a "See
  *      All Facilities" link to /facilities.
- *   5. Reviews preview (Req 2.6) — <ReviewsSection limit={3} viewAllHref="/reviews" />.
+ *   5. Reviews preview (Req 2.6) — <ReviewsSection viewAllHref="/reviews" />.
  *   6. WhatsApp entry point (Req 2.7, 16.2) — <WhatsAppEntryPoint />.
  *
  * Design / UX contract:
@@ -449,12 +449,12 @@ export default function HomePage() {
       <VideoTour headingLevel={2} />
 
       {/*
-       * 6. Reviews preview (Req 2.6) — reusable ReviewsSection with limit=3
-       *    and a "Read all reviews" link to /reviews (Req 11.3).
+       * 6. Reviews preview (Req 2.6) — reusable ReviewsSection showing ALL
+       *    testimonials (mobile carousel slides through every one) plus a
+       *    "Read all reviews" link to /reviews (Req 11.3).
        */}
       <ReviewsSection
         reviews={reviews}
-        limit={3}
         viewAllHref="/reviews"
         headingLevel={2}
         id="reviews-preview"

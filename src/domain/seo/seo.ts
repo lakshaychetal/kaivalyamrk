@@ -553,7 +553,7 @@ export const KAIVALYAM_BUSINESS: LodgingBusinessConfig = {
     addressCountry: 'India',
   },
   geo: {
-    latitude: 11.8126,
-    longitude: 76.1059,
+    latitude: 11.8482072,
+    longitude: 76.1847414,
   },
 };

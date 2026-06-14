@@ -97,19 +97,19 @@ export function buildDirectionsUrl(config: DirectionsConfig): string {
  * and keeps the destination meaningful even if the pin is refined later.
  */
 export const KAIVALYAM_DIRECTIONS_CONFIG: DirectionsConfig = {
-  // TODO: confirm exact property pin — approximate Padichira/Pulpally locale.
-  lat: 11.8126,
-  lng: 76.1059,
+  // Exact pin from the owner-verified Google Maps listing for Kaivalyam Homestay.
+  lat: 11.8482072,
+  lng: 76.1847414,
   query: "Kaivalyam Homestay, Padichira, Pulpally, Wayanad, Kerala 673579, India",
 };
 
 /**
- * The owner-verified Google Maps share link for Kaivalyam Homestay. This is the
- * exact pin the client confirmed, so it is the canonical "Get Directions"
- * destination reused by the Contact (13.1) and Reach Us (11.6) pages. Opening it
- * lands on the verified place card, from which the map app offers turn-by-turn
+ * The owner-verified Google Maps link for Kaivalyam Homestay. This is the exact
+ * pin the client confirmed, so it is the canonical "Get Directions" destination
+ * reused by the Contact (13.1) and Reach Us (11.6) pages. Opening it lands on
+ * the verified place card, from which the map app offers turn-by-turn
  * directions. Preferred over a re-derived coordinate link because it always
  * resolves to the confirmed location.
  */
 export const KAIVALYAM_DIRECTIONS_URL =
-  "https://share.google/zQtEaVJ0WmRI27aww" as const;
+  "https://maps.app.goo.gl/8d9JRms9fKtwjH7XA" as const;

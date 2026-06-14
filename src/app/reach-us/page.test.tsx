@@ -157,8 +157,8 @@ describe("Reach Us page — Get Directions action (Req 10.4)", () => {
       .getAllByRole("link", { name: /get directions/i })
       .filter((a) => a.getAttribute("href") === directionsUrl);
     expect(links.length).toBeGreaterThan(0);
-    // Confirm the URL is the owner-verified Google share link.
-    expect(directionsUrl).toMatch(/^https:\/\/share\.google\//);
+    // Confirm the URL is the owner-verified Google Maps link.
+    expect(directionsUrl).toMatch(/^https:\/\/maps\.app\.goo\.gl\//);
   });
 
   it("the Get Directions link opens in a separate browser context", () => {

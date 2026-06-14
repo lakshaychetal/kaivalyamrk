@@ -91,12 +91,13 @@ export const address: PostalAddress = {
 /**
  * Map location for the embedded Wayanad map (Req 9.4).
  *
- * The embed resolves by PLACE NAME so it pins the owner-verified Google Maps
- * business listing for Kaivalyam Homestay (the same place behind the verified
- * share link used for "Get Directions"). No hard-coded coordinates, so the
- * embed never drifts from the confirmed pin.
+ * Exact coordinates from the owner-verified Google Maps listing for Kaivalyam
+ * Homestay, so the embed drops a pin on the precise spot. The `embedQuery`
+ * remains as a human-readable fallback if coordinates are ever cleared.
  */
 export const mapLocation: MapLocation = {
+  lat: 11.8482072,
+  lng: 76.1847414,
   embedQuery: 'Kaivalyam Homestay, Padichira, Pulpally, Wayanad, Kerala, India',
 };
 

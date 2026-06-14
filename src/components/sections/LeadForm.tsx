@@ -103,6 +103,10 @@ export function LeadForm() {
       {/* FormSubmit.co configuration (hidden inputs) */}
       <input type="hidden" name="_subject" value="New booking enquiry — Kaivalyam Homestay" />
       <input type="hidden" name="_template" value="table" />
+      {/* Branded source shown in the email body (so it references our domain,
+          not the deploy URL). FormSubmit's "submitted on" line follows the
+          page origin and becomes kaivalyamhomestay.com on the live domain. */}
+      <input type="hidden" name="Website" value="https://kaivalyamhomestay.com" />
       {/* Honeypot anti-spam field */}
       <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 

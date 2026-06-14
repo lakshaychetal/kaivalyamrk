@@ -18,7 +18,7 @@ import type { MetadataRoute } from 'next';
  */
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
-  'https://www.kaivalyamhomestay.com';
+  'https://kaivalyamhomestay.com';
 
 /**
  * Public marketing pages to include in the sitemap.

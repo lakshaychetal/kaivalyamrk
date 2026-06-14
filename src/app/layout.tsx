@@ -5,7 +5,7 @@ import { SiteShell } from "@/components/layout/SiteShell";
 import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
 import { AnalyticsProvider } from "@/components/layout/AnalyticsProvider";
 import { AmbientPlayer } from "@/components/layout/AmbientPlayer";
-import { LodgingBusinessJsonLd } from "@/domain/seo/seo";
+import { LodgingBusinessJsonLd, SITE_URL, SITE_NAME } from "@/domain/seo/seo";
 
 /**
  * Brand typography (task 2.1):
@@ -31,18 +31,58 @@ const fontSans = Source_Sans_3({
 });
 
 /**
- * Placeholder root metadata. Per-page metadata (unique titles/descriptions,
- * OpenGraph, JSON-LD) is wired through `buildPageMeta` in task 15.3.
- * The template ensures pages that don't set their own title still get a
- * branded suffix.
+ * Root metadata. `metadataBase` makes every relative OG/canonical URL resolve
+ * to the production domain. Per-page metadata (unique titles/descriptions,
+ * canonical, OpenGraph) comes from `buildPageMeta`; this provides the site-wide
+ * defaults, default social-share card, and the canonical for the home page.
+ *
+ * `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (optional): paste the token from Google
+ * Search Console ("HTML tag" verification) into this env var to verify the site.
  */
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Kaivalyam Homestay — Experience Serene Solitude",
     template: "%s · Kaivalyam Homestay",
   },
   description:
     "A tranquil hill-village homestay in Padichira, Wayanad, Kerala. Experience serene solitude. #KAIVALYAM",
+  applicationName: SITE_NAME,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    url: "/",
+    title: "Kaivalyam Homestay — Experience Serene Solitude",
+    description:
+      "A tranquil hill-village homestay in Padichira, Wayanad, Kerala. Experience serene solitude. #KAIVALYAM",
+    images: [
+      {
+        url: "/og/kaivalyam-night-ambiance.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kaivalyam Homestay aglow with warm lantern light against the Wayanad dusk",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kaivalyam Homestay — Experience Serene Solitude",
+    description:
+      "A tranquil hill-village homestay in Padichira, Wayanad, Kerala. Experience serene solitude.",
+    images: ["/og/kaivalyam-night-ambiance.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 /**

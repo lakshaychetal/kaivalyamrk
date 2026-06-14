@@ -35,11 +35,14 @@ export const SITE_NAME = 'Kaivalyam Homestay' as const;
 export const SITE_TAGLINE = 'EXPERIENCE SERENE SOLITUDE #KAIVALYAM' as const;
 
 /**
- * Canonical site origin. A PLACEHOLDER until the production domain is confirmed;
- * task 15.3 can wire this into Next's `metadataBase` so relative OG image paths
- * resolve to absolute URLs. Kept here as the single configurable origin.
+ * Canonical site origin (no trailing slash). Reads `NEXT_PUBLIC_SITE_URL` at
+ * build time and falls back to the production apex domain. Wired into Next's
+ * `metadataBase` (root layout) so relative OG/canonical paths resolve to
+ * absolute URLs, and used as the canonical `url` in the LodgingBusiness JSON-LD.
  */
-export const SITE_URL = 'https://www.kaivalyamhomestay.com' as const;
+export const SITE_URL: string =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
+  'https://kaivalyamhomestay.com';
 
 // ===========================================================================
 // 1. Page registry — the SINGLE SOURCE OF TRUTH for per-page metadata
@@ -218,6 +221,8 @@ export interface PageMeta {
   title: string;
   /** Non-empty meta description (Req 21.1). */
   description: string;
+  /** Self-referencing canonical URL (site-relative path; absolute via metadataBase). */
+  alternates: { canonical: string };
   /** Social-sharing metadata: title, description, preview image (Req 21.5). */
   openGraph: OpenGraphMeta;
 }
@@ -245,6 +250,7 @@ export function buildPageMeta(page: PageKey): PageMeta {
   return {
     title: source.title,
     description: source.description,
+    alternates: { canonical: source.path },
     openGraph: {
       title: source.ogTitle ?? source.title,
       description: source.ogDescription ?? source.description,
@@ -543,7 +549,7 @@ export const KAIVALYAM_BUSINESS: LodgingBusinessConfig = {
   url: SITE_URL,
   telephone: '+91 80753 91908',
   email: 'stay@kaivalyamhomestay.com',
-  image: [DEFAULT_OG_IMAGE.url],
+  image: [`${SITE_URL}${DEFAULT_OG_IMAGE.url}`],
   priceRange: '$$',
   address: {
     streetAddress: 'Padichira',
@@ -556,4 +562,7 @@ export const KAIVALYAM_BUSINESS: LodgingBusinessConfig = {
     latitude: 11.8482072,
     longitude: 76.1847414,
   },
+  // Link the website entity to the verified Google Maps business listing so
+  // search engines associate this domain with the brand's local profile.
+  sameAs: ['https://maps.app.goo.gl/8d9JRms9fKtwjH7XA'],
 };

@@ -145,6 +145,19 @@ const AI_GENERATED_ATTRACTIONS = new Set([
   "meppadi_glass_bridge",
 ]);
 
+/**
+ * Display-name overrides for specific attraction ids (`<category>__<basename>`).
+ * The default display name is `titleCase(basename)`, which cannot express
+ * punctuation (commas, periods). Use this map when the client wants an exact
+ * label that differs from the filename-derived one. The override flows into
+ * both the `name` and the derived `alt` text; the source filename, id, src
+ * path, and attribution key are unchanged.
+ */
+const ATTRACTION_NAME_OVERRIDES = {
+  religious_sites__latin_church_wayanad: "St. Jude Church, Chundale",
+  religious_sites__valliyoorkkavu: "Valliyoorkavu Temple",
+};
+
 // ---------------------------------------------------------------------------
 // Small helpers
 // ---------------------------------------------------------------------------
@@ -354,8 +367,8 @@ async function main() {
     for (const file of files) {
       const ext = path.extname(file);
       const basename = path.basename(file, ext);
-      const name = titleCase(basename);
       const id = `${map.category}__${basename}`;
+      const name = ATTRACTION_NAME_OVERRIDES[id] ?? titleCase(basename);
       const source = AI_GENERATED_ATTRACTIONS.has(basename) ? "ai-generated" : "wikimedia";
       const outDir = path.join(OUT_PUBLIC, "attractions", folder);
       const r = await processImage(path.join(srcDir, file), outDir, basename, counters);

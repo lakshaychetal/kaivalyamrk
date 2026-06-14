@@ -550,264 +550,266 @@ export const imageVariants: ImageVariantMap = {
   },
   "outdoor_living__food_dosa": {
     "id": "outdoor_living__food_dosa",
-    "src": "/generated/property/outdoor_living/food_dosa-137.jpg",
-    "width": 137,
-    "height": 140,
+    "src": "/generated/property/outdoor_living/food_dosa-1600.jpg",
+    "width": 5472,
+    "height": 3648,
     "widths": [
-      137
+      400,
+      800,
+      1200,
+      1600
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_dosa-137.avif 137w"
+        "srcSet": "/generated/property/outdoor_living/food_dosa-400.avif 400w, /generated/property/outdoor_living/food_dosa-800.avif 800w, /generated/property/outdoor_living/food_dosa-1200.avif 1200w, /generated/property/outdoor_living/food_dosa-1600.avif 1600w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_dosa-137.webp 137w"
+        "srcSet": "/generated/property/outdoor_living/food_dosa-400.webp 400w, /generated/property/outdoor_living/food_dosa-800.webp 800w, /generated/property/outdoor_living/food_dosa-1200.webp 1200w, /generated/property/outdoor_living/food_dosa-1600.webp 1600w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_dosa-137.jpg 137w"
-      }
-    ],
-    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-  },
-  "outdoor_living__food_fish_fry": {
-    "id": "outdoor_living__food_fish_fry",
-    "src": "/generated/property/outdoor_living/food_fish_fry-174.jpg",
-    "width": 174,
-    "height": 160,
-    "widths": [
-      174
-    ],
-    "sources": [
-      {
-        "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.avif 174w"
-      },
-      {
-        "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.webp 174w"
-      },
-      {
-        "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry-174.jpg 174w"
-      }
-    ],
-    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-  },
-  "outdoor_living__food_fish_fry2": {
-    "id": "outdoor_living__food_fish_fry2",
-    "src": "/generated/property/outdoor_living/food_fish_fry2-168.jpg",
-    "width": 168,
-    "height": 163,
-    "widths": [
-      168
-    ],
-    "sources": [
-      {
-        "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.avif 168w"
-      },
-      {
-        "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.webp 168w"
-      },
-      {
-        "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_fish_fry2-168.jpg 168w"
+        "srcSet": "/generated/property/outdoor_living/food_dosa-400.jpg 400w, /generated/property/outdoor_living/food_dosa-800.jpg 800w, /generated/property/outdoor_living/food_dosa-1200.jpg 1200w, /generated/property/outdoor_living/food_dosa-1600.jpg 1600w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
   "outdoor_living__food_idiappam": {
     "id": "outdoor_living__food_idiappam",
-    "src": "/generated/property/outdoor_living/food_idiappam-136.jpg",
-    "width": 136,
-    "height": 159,
+    "src": "/generated/property/outdoor_living/food_idiappam-1200.jpg",
+    "width": 1280,
+    "height": 853,
     "widths": [
-      136
+      400,
+      800,
+      1200
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.avif 136w"
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-400.avif 400w, /generated/property/outdoor_living/food_idiappam-800.avif 800w, /generated/property/outdoor_living/food_idiappam-1200.avif 1200w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.webp 136w"
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-400.webp 400w, /generated/property/outdoor_living/food_idiappam-800.webp 800w, /generated/property/outdoor_living/food_idiappam-1200.webp 1200w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_idiappam-136.jpg 136w"
+        "srcSet": "/generated/property/outdoor_living/food_idiappam-400.jpg 400w, /generated/property/outdoor_living/food_idiappam-800.jpg 800w, /generated/property/outdoor_living/food_idiappam-1200.jpg 1200w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "outdoor_living__food_idli_vada": {
-    "id": "outdoor_living__food_idli_vada",
-    "src": "/generated/property/outdoor_living/food_idli_vada-172.jpg",
-    "width": 172,
-    "height": 129,
+  "outdoor_living__food_karimeen_fish": {
+    "id": "outdoor_living__food_karimeen_fish",
+    "src": "/generated/property/outdoor_living/food_karimeen_fish-1200.jpg",
+    "width": 1280,
+    "height": 853,
     "widths": [
-      172
+      400,
+      800,
+      1200
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.avif 172w"
+        "srcSet": "/generated/property/outdoor_living/food_karimeen_fish-400.avif 400w, /generated/property/outdoor_living/food_karimeen_fish-800.avif 800w, /generated/property/outdoor_living/food_karimeen_fish-1200.avif 1200w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.webp 172w"
+        "srcSet": "/generated/property/outdoor_living/food_karimeen_fish-400.webp 400w, /generated/property/outdoor_living/food_karimeen_fish-800.webp 800w, /generated/property/outdoor_living/food_karimeen_fish-1200.webp 1200w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_idli_vada-172.jpg 172w"
+        "srcSet": "/generated/property/outdoor_living/food_karimeen_fish-400.jpg 400w, /generated/property/outdoor_living/food_karimeen_fish-800.jpg 800w, /generated/property/outdoor_living/food_karimeen_fish-1200.jpg 1200w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "outdoor_living__food_meals": {
-    "id": "outdoor_living__food_meals",
-    "src": "/generated/property/outdoor_living/food_meals-126.jpg",
-    "width": 126,
-    "height": 138,
+  "outdoor_living__food_kerala_breakfast": {
+    "id": "outdoor_living__food_kerala_breakfast",
+    "src": "/generated/property/outdoor_living/food_kerala_breakfast-1600.jpg",
+    "width": 2495,
+    "height": 3664,
     "widths": [
-      126
+      400,
+      800,
+      1200,
+      1600
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_meals-126.avif 126w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_breakfast-400.avif 400w, /generated/property/outdoor_living/food_kerala_breakfast-800.avif 800w, /generated/property/outdoor_living/food_kerala_breakfast-1200.avif 1200w, /generated/property/outdoor_living/food_kerala_breakfast-1600.avif 1600w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_meals-126.webp 126w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_breakfast-400.webp 400w, /generated/property/outdoor_living/food_kerala_breakfast-800.webp 800w, /generated/property/outdoor_living/food_kerala_breakfast-1200.webp 1200w, /generated/property/outdoor_living/food_kerala_breakfast-1600.webp 1600w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_meals-126.jpg 126w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_breakfast-400.jpg 400w, /generated/property/outdoor_living/food_kerala_breakfast-800.jpg 800w, /generated/property/outdoor_living/food_kerala_breakfast-1200.jpg 1200w, /generated/property/outdoor_living/food_kerala_breakfast-1600.jpg 1600w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "outdoor_living__food_medu_vada": {
-    "id": "outdoor_living__food_medu_vada",
-    "src": "/generated/property/outdoor_living/food_medu_vada-82.jpg",
-    "width": 82,
-    "height": 129,
+  "outdoor_living__food_kerala_curry": {
+    "id": "outdoor_living__food_kerala_curry",
+    "src": "/generated/property/outdoor_living/food_kerala_curry-1600.jpg",
+    "width": 3946,
+    "height": 5260,
     "widths": [
-      82
+      400,
+      800,
+      1200,
+      1600
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.avif 82w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_curry-400.avif 400w, /generated/property/outdoor_living/food_kerala_curry-800.avif 800w, /generated/property/outdoor_living/food_kerala_curry-1200.avif 1200w, /generated/property/outdoor_living/food_kerala_curry-1600.avif 1600w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.webp 82w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_curry-400.webp 400w, /generated/property/outdoor_living/food_kerala_curry-800.webp 800w, /generated/property/outdoor_living/food_kerala_curry-1200.webp 1200w, /generated/property/outdoor_living/food_kerala_curry-1600.webp 1600w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_medu_vada-82.jpg 82w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_curry-400.jpg 400w, /generated/property/outdoor_living/food_kerala_curry-800.jpg 800w, /generated/property/outdoor_living/food_kerala_curry-1200.jpg 1200w, /generated/property/outdoor_living/food_kerala_curry-1600.jpg 1600w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "outdoor_living__food_mutton_curry": {
-    "id": "outdoor_living__food_mutton_curry",
-    "src": "/generated/property/outdoor_living/food_mutton_curry-131.jpg",
-    "width": 131,
-    "height": 131,
+  "outdoor_living__food_kerala_meal": {
+    "id": "outdoor_living__food_kerala_meal",
+    "src": "/generated/property/outdoor_living/food_kerala_meal-1600.jpg",
+    "width": 4869,
+    "height": 4000,
     "widths": [
-      131
+      400,
+      800,
+      1200,
+      1600
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.avif 131w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_meal-400.avif 400w, /generated/property/outdoor_living/food_kerala_meal-800.avif 800w, /generated/property/outdoor_living/food_kerala_meal-1200.avif 1200w, /generated/property/outdoor_living/food_kerala_meal-1600.avif 1600w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.webp 131w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_meal-400.webp 400w, /generated/property/outdoor_living/food_kerala_meal-800.webp 800w, /generated/property/outdoor_living/food_kerala_meal-1200.webp 1200w, /generated/property/outdoor_living/food_kerala_meal-1600.webp 1600w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_mutton_curry-131.jpg 131w"
+        "srcSet": "/generated/property/outdoor_living/food_kerala_meal-400.jpg 400w, /generated/property/outdoor_living/food_kerala_meal-800.jpg 800w, /generated/property/outdoor_living/food_kerala_meal-1200.jpg 1200w, /generated/property/outdoor_living/food_kerala_meal-1600.jpg 1600w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_kerala_snack": {
+    "id": "outdoor_living__food_kerala_snack",
+    "src": "/generated/property/outdoor_living/food_kerala_snack-1200.jpg",
+    "width": 1280,
+    "height": 853,
+    "widths": [
+      400,
+      800,
+      1200
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_snack-400.avif 400w, /generated/property/outdoor_living/food_kerala_snack-800.avif 800w, /generated/property/outdoor_living/food_kerala_snack-1200.avif 1200w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_snack-400.webp 400w, /generated/property/outdoor_living/food_kerala_snack-800.webp 800w, /generated/property/outdoor_living/food_kerala_snack-1200.webp 1200w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_snack-400.jpg 400w, /generated/property/outdoor_living/food_kerala_snack-800.jpg 800w, /generated/property/outdoor_living/food_kerala_snack-1200.jpg 1200w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_kerala_spread": {
+    "id": "outdoor_living__food_kerala_spread",
+    "src": "/generated/property/outdoor_living/food_kerala_spread-1600.jpg",
+    "width": 3024,
+    "height": 3984,
+    "widths": [
+      400,
+      800,
+      1200,
+      1600
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_spread-400.avif 400w, /generated/property/outdoor_living/food_kerala_spread-800.avif 800w, /generated/property/outdoor_living/food_kerala_spread-1200.avif 1200w, /generated/property/outdoor_living/food_kerala_spread-1600.avif 1600w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_spread-400.webp 400w, /generated/property/outdoor_living/food_kerala_spread-800.webp 800w, /generated/property/outdoor_living/food_kerala_spread-1200.webp 1200w, /generated/property/outdoor_living/food_kerala_spread-1600.webp 1600w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_spread-400.jpg 400w, /generated/property/outdoor_living/food_kerala_spread-800.jpg 800w, /generated/property/outdoor_living/food_kerala_spread-1200.jpg 1200w, /generated/property/outdoor_living/food_kerala_spread-1600.jpg 1600w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "outdoor_living__food_kerala_thali": {
+    "id": "outdoor_living__food_kerala_thali",
+    "src": "/generated/property/outdoor_living/food_kerala_thali-1600.jpg",
+    "width": 4000,
+    "height": 3000,
+    "widths": [
+      400,
+      800,
+      1200,
+      1600
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_thali-400.avif 400w, /generated/property/outdoor_living/food_kerala_thali-800.avif 800w, /generated/property/outdoor_living/food_kerala_thali-1200.avif 1200w, /generated/property/outdoor_living/food_kerala_thali-1600.avif 1600w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_thali-400.webp 400w, /generated/property/outdoor_living/food_kerala_thali-800.webp 800w, /generated/property/outdoor_living/food_kerala_thali-1200.webp 1200w, /generated/property/outdoor_living/food_kerala_thali-1600.webp 1600w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/outdoor_living/food_kerala_thali-400.jpg 400w, /generated/property/outdoor_living/food_kerala_thali-800.jpg 800w, /generated/property/outdoor_living/food_kerala_thali-1200.jpg 1200w, /generated/property/outdoor_living/food_kerala_thali-1600.jpg 1600w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
   "outdoor_living__food_parippu_vada": {
     "id": "outdoor_living__food_parippu_vada",
-    "src": "/generated/property/outdoor_living/food_parippu_vada-269.jpg",
-    "width": 269,
-    "height": 299,
+    "src": "/generated/property/outdoor_living/food_parippu_vada-1200.jpg",
+    "width": 1280,
+    "height": 853,
     "widths": [
-      269
+      400,
+      800,
+      1200
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.avif 269w"
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-400.avif 400w, /generated/property/outdoor_living/food_parippu_vada-800.avif 800w, /generated/property/outdoor_living/food_parippu_vada-1200.avif 1200w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.webp 269w"
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-400.webp 400w, /generated/property/outdoor_living/food_parippu_vada-800.webp 800w, /generated/property/outdoor_living/food_parippu_vada-1200.webp 1200w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-269.jpg 269w"
-      }
-    ],
-    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-  },
-  "outdoor_living__food_puttu": {
-    "id": "outdoor_living__food_puttu",
-    "src": "/generated/property/outdoor_living/food_puttu-202.jpg",
-    "width": 202,
-    "height": 140,
-    "widths": [
-      202
-    ],
-    "sources": [
-      {
-        "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_puttu-202.avif 202w"
-      },
-      {
-        "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_puttu-202.webp 202w"
-      },
-      {
-        "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_puttu-202.jpg 202w"
-      }
-    ],
-    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-  },
-  "outdoor_living__food_puttu2": {
-    "id": "outdoor_living__food_puttu2",
-    "src": "/generated/property/outdoor_living/food_puttu2-202.jpg",
-    "width": 202,
-    "height": 140,
-    "widths": [
-      202
-    ],
-    "sources": [
-      {
-        "type": "image/avif",
-        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.avif 202w"
-      },
-      {
-        "type": "image/webp",
-        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.webp 202w"
-      },
-      {
-        "type": "image/jpeg",
-        "srcSet": "/generated/property/outdoor_living/food_puttu2-202.jpg 202w"
+        "srcSet": "/generated/property/outdoor_living/food_parippu_vada-400.jpg 400w, /generated/property/outdoor_living/food_parippu_vada-800.jpg 800w, /generated/property/outdoor_living/food_parippu_vada-1200.jpg 1200w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -1709,56 +1711,80 @@ export const imageVariants: ImageVariantMap = {
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "play_area__merry_go_round_colorful": {
-    "id": "play_area__merry_go_round_colorful",
-    "src": "/generated/property/play_area/merry_go_round_colorful-1600.jpg",
-    "width": 4608,
-    "height": 3072,
+  "play_area__childrens_play_area_1": {
+    "id": "play_area__childrens_play_area_1",
+    "src": "/generated/property/play_area/childrens_play_area_1-1200.jpg",
+    "width": 1379,
+    "height": 919,
     "widths": [
       400,
       800,
-      1200,
-      1600
+      1200
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/play_area/merry_go_round_colorful-400.avif 400w, /generated/property/play_area/merry_go_round_colorful-800.avif 800w, /generated/property/play_area/merry_go_round_colorful-1200.avif 1200w, /generated/property/play_area/merry_go_round_colorful-1600.avif 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_1-400.avif 400w, /generated/property/play_area/childrens_play_area_1-800.avif 800w, /generated/property/play_area/childrens_play_area_1-1200.avif 1200w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/play_area/merry_go_round_colorful-400.webp 400w, /generated/property/play_area/merry_go_round_colorful-800.webp 800w, /generated/property/play_area/merry_go_round_colorful-1200.webp 1200w, /generated/property/play_area/merry_go_round_colorful-1600.webp 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_1-400.webp 400w, /generated/property/play_area/childrens_play_area_1-800.webp 800w, /generated/property/play_area/childrens_play_area_1-1200.webp 1200w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/play_area/merry_go_round_colorful-400.jpg 400w, /generated/property/play_area/merry_go_round_colorful-800.jpg 800w, /generated/property/play_area/merry_go_round_colorful-1200.jpg 1200w, /generated/property/play_area/merry_go_round_colorful-1600.jpg 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_1-400.jpg 400w, /generated/property/play_area/childrens_play_area_1-800.jpg 800w, /generated/property/play_area/childrens_play_area_1-1200.jpg 1200w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
   },
-  "play_area__swings_and_equipment": {
-    "id": "play_area__swings_and_equipment",
-    "src": "/generated/property/play_area/swings_and_equipment-1600.jpg",
-    "width": 3072,
-    "height": 4608,
+  "play_area__childrens_play_area_2": {
+    "id": "play_area__childrens_play_area_2",
+    "src": "/generated/property/play_area/childrens_play_area_2-1200.jpg",
+    "width": 1379,
+    "height": 919,
     "widths": [
       400,
       800,
-      1200,
-      1600
+      1200
     ],
     "sources": [
       {
         "type": "image/avif",
-        "srcSet": "/generated/property/play_area/swings_and_equipment-400.avif 400w, /generated/property/play_area/swings_and_equipment-800.avif 800w, /generated/property/play_area/swings_and_equipment-1200.avif 1200w, /generated/property/play_area/swings_and_equipment-1600.avif 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_2-400.avif 400w, /generated/property/play_area/childrens_play_area_2-800.avif 800w, /generated/property/play_area/childrens_play_area_2-1200.avif 1200w"
       },
       {
         "type": "image/webp",
-        "srcSet": "/generated/property/play_area/swings_and_equipment-400.webp 400w, /generated/property/play_area/swings_and_equipment-800.webp 800w, /generated/property/play_area/swings_and_equipment-1200.webp 1200w, /generated/property/play_area/swings_and_equipment-1600.webp 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_2-400.webp 400w, /generated/property/play_area/childrens_play_area_2-800.webp 800w, /generated/property/play_area/childrens_play_area_2-1200.webp 1200w"
       },
       {
         "type": "image/jpeg",
-        "srcSet": "/generated/property/play_area/swings_and_equipment-400.jpg 400w, /generated/property/play_area/swings_and_equipment-800.jpg 800w, /generated/property/play_area/swings_and_equipment-1200.jpg 1200w, /generated/property/play_area/swings_and_equipment-1600.jpg 1600w"
+        "srcSet": "/generated/property/play_area/childrens_play_area_2-400.jpg 400w, /generated/property/play_area/childrens_play_area_2-800.jpg 800w, /generated/property/play_area/childrens_play_area_2-1200.jpg 1200w"
+      }
+    ],
+    "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+  },
+  "play_area__childrens_play_area_3": {
+    "id": "play_area__childrens_play_area_3",
+    "src": "/generated/property/play_area/childrens_play_area_3-1200.jpg",
+    "width": 1379,
+    "height": 919,
+    "widths": [
+      400,
+      800,
+      1200
+    ],
+    "sources": [
+      {
+        "type": "image/avif",
+        "srcSet": "/generated/property/play_area/childrens_play_area_3-400.avif 400w, /generated/property/play_area/childrens_play_area_3-800.avif 800w, /generated/property/play_area/childrens_play_area_3-1200.avif 1200w"
+      },
+      {
+        "type": "image/webp",
+        "srcSet": "/generated/property/play_area/childrens_play_area_3-400.webp 400w, /generated/property/play_area/childrens_play_area_3-800.webp 800w, /generated/property/play_area/childrens_play_area_3-1200.webp 1200w"
+      },
+      {
+        "type": "image/jpeg",
+        "srcSet": "/generated/property/play_area/childrens_play_area_3-400.jpg 400w, /generated/property/play_area/childrens_play_area_3-800.jpg 800w, /generated/property/play_area/childrens_play_area_3-1200.jpg 1200w"
       }
     ],
     "sizes": "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

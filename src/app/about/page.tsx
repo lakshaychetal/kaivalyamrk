@@ -53,7 +53,10 @@ import {
 
 import { Icon } from "@/components/ui/Icon";
 import { Card, CardTitle, CardBody } from "@/components/ui/Card";
-import { ResponsiveImage } from "@/components/media/ResponsiveImage";
+import {
+  ResponsiveImage,
+  type ResponsiveImageAsset,
+} from "@/components/media/ResponsiveImage";
 import {
   aboutContent,
   type AboutSection,
@@ -114,25 +117,102 @@ const headerPhoto: Photo | undefined =
   filterByCategory(photoCatalog, "exteriors")[0] ??
   illustrativePhotos[0];
 
-/** Render a titled prose section (`h2` + ordered paragraphs) at a calm measure. */
-function ProseSection({ section }: { section: AboutSection }) {
+/**
+ * Editorial images that accompany the narrative sections, filling the
+ * otherwise-empty column on wide screens. Served from `/public/images/sections`
+ * (client-provided photos), with intrinsic dimensions declared so the reserved
+ * box never shifts (Req 20.3).
+ */
+const SECTION_IMAGES: Record<string, ResponsiveImageAsset> = {
+  meaning: {
+    id: "meaning-of-kaivalyam",
+    src: "/images/sections/meaning-of-kaivalyam.jpg",
+    alt: "A peaceful, contemplative view at Kaivalyam Homestay",
+    width: 579,
+    height: 434,
+  },
+  positioning: {
+    id: "tranquil-home",
+    src: "/images/sections/tranquil-home.jpg",
+    alt: "A tranquil corner of Kaivalyam, made for long, slow stays",
+    width: 307,
+    height: 172,
+  },
+  wayanadStory: {
+    id: "paddy-fields",
+    src: "/images/sections/paddy-fields.jpg",
+    alt: "Emerald paddy fields of Wayanad, the land of paddy fields",
+    width: 278,
+    height: 187,
+  },
+};
+
+/**
+ * Render a titled prose section (`h2` + ordered paragraphs) at a calm measure.
+ * When an `image` is supplied the section becomes a two-column layout on wide
+ * screens (image + prose), so the wide page no longer leaves empty space beside
+ * the text. `imageSide` alternates the image left/right for visual rhythm.
+ */
+function ProseSection({
+  section,
+  image,
+  imageSide = "right",
+}: {
+  section: AboutSection;
+  image?: ResponsiveImageAsset;
+  imageSide?: "left" | "right";
+}) {
+  const heading = (
+    <h2
+      id={`${section.id}-heading`}
+      className="font-serif text-2xl font-semibold text-secondary md:text-3xl"
+    >
+      {section.heading}
+    </h2>
+  );
+
+  const prose = (
+    <div className="mt-4 flex flex-col gap-4">
+      {section.paragraphs.map((paragraph, index) => (
+        <p
+          key={index}
+          className="max-w-prose text-base leading-relaxed text-on-surface"
+        >
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  );
+
+  if (!image) {
+    return (
+      <section aria-labelledby={`${section.id}-heading`}>
+        {heading}
+        {prose}
+      </section>
+    );
+  }
+
+  const figure = (
+    <div className={imageSide === "left" ? "md:order-1" : "md:order-2"}>
+      <ResponsiveImage
+        image={image}
+        fill
+        sizes="(min-width: 768px) 45vw, 100vw"
+        className="object-cover"
+        wrapperClassName="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border shadow-sm"
+      />
+    </div>
+  );
+
   return (
     <section aria-labelledby={`${section.id}-heading`}>
-      <h2
-        id={`${section.id}-heading`}
-        className="font-serif text-2xl font-semibold text-secondary md:text-3xl"
-      >
-        {section.heading}
-      </h2>
-      <div className="mt-4 flex flex-col gap-4">
-        {section.paragraphs.map((paragraph, index) => (
-          <p
-            key={index}
-            className="max-w-prose text-base leading-relaxed text-on-surface"
-          >
-            {paragraph}
-          </p>
-        ))}
+      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+        {figure}
+        <div className={imageSide === "left" ? "md:order-2" : "md:order-1"}>
+          {heading}
+          {prose}
+        </div>
       </div>
     </section>
   );
@@ -207,13 +287,13 @@ export default function AboutPage() {
       <div className="mx-auto w-full max-w-5xl px-4 py-12 md:px-6 md:py-16">
         <div className="flex flex-col gap-12">
         {/* Req 3.1 — the meaning of "Kaivalyam". */}
-        <ProseSection section={meaning} />
+        <ProseSection section={meaning} image={SECTION_IMAGES.meaning} imageSide="left" />
 
         {/* Req 3.2 — tranquil, long-stay positioning. */}
-        <ProseSection section={positioning} />
+        <ProseSection section={positioning} image={SECTION_IMAGES.positioning} imageSide="right" />
 
         {/* Req 3.3 — the Wayanad region story (natural + cultural setting). */}
-        <ProseSection section={wayanadStory} />
+        <ProseSection section={wayanadStory} image={SECTION_IMAGES.wayanadStory} imageSide="left" />
 
         {/* Req 3.4 — signature offerings. */}
         <section aria-labelledby="offerings-heading">

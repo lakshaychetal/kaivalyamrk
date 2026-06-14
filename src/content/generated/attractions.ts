@@ -579,12 +579,12 @@ export const attractions: AttractionItem[] = [
   },
   {
     "id": "religious_sites__valliyoorkkavu",
-    "name": "Valliyoorkkavu",
+    "name": "Valliyoorkavu Temple",
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__valliyoorkkavu",
       "src": "/generated/attractions/e1_hindu_temples/valliyoorkkavu-1200.jpg",
-      "alt": "Valliyoorkkavu — Religious Sites near Kaivalyam Homestay, Wayanad",
+      "alt": "Valliyoorkavu Temple — Religious Sites near Kaivalyam Homestay, Wayanad",
       "width": 1280,
       "height": 720,
       "source": "wikimedia",
@@ -663,12 +663,12 @@ export const attractions: AttractionItem[] = [
   },
   {
     "id": "religious_sites__latin_church_wayanad",
-    "name": "Latin Church Wayanad",
+    "name": "St. Jude Church, Chundale",
     "category": "religious_sites",
     "image": {
       "id": "religious_sites__latin_church_wayanad",
       "src": "/generated/attractions/e3_christian_churches/latin_church_wayanad-400.jpg",
-      "alt": "Latin Church Wayanad — Religious Sites near Kaivalyam Homestay, Wayanad",
+      "alt": "St. Jude Church, Chundale — Religious Sites near Kaivalyam Homestay, Wayanad",
       "width": 725,
       "height": 481,
       "source": "wikimedia",

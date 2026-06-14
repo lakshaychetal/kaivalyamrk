@@ -226,31 +226,57 @@ function PhilosophySection() {
       aria-labelledby="philosophy-heading"
       className="bg-surface-alt"
     >
-      <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-6 md:py-16">
-        <h2
-          id="philosophy-heading"
-          className="font-serif text-2xl font-semibold text-secondary md:text-3xl"
-        >
-          What is Kaivalyam?
-        </h2>
-        <div className="mt-4 flex flex-col gap-4">
-          <p className="max-w-prose text-base leading-relaxed text-on-surface">
-            <strong className="font-semibold text-secondary">Kaivalyam</strong>{" "}
-            means liberation and solitude of the soul — a state of pure,
-            undisturbed stillness. It is the name we chose because it is
-            exactly what this place offers: a corner of the Wayanad hills where
-            the noise of the world falls away and you are left with birdsong,
-            pure unpolluted air, and time that is genuinely your own.
-          </p>
-          <p className="max-w-prose text-base leading-relaxed text-on-surface">
-            Nestled in Padichira, about 10 km from Pulpally town, Kaivalyam is
-            a homestay built for long, unhurried stays. Whether you come for a
-            week or a month, you will find the same hospitable welcome,
-            home-cooked Malayali meals, and the quiet that the name promises.
-          </p>
-        </div>
-        <div className="mt-6">
-          <SectionLink href="/about">Discover our story</SectionLink>
+      <div className="mx-auto w-full max-w-6xl px-4 py-12 md:px-6 md:py-16">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+          {/* Illustrative image — fills the otherwise-empty left column on desktop. */}
+          <div className="order-1">
+            <ResponsiveImage
+              image={{
+                id: "what-is-kaivalyam",
+                src: "/images/sections/what-is-kaivalyam.jpg",
+                alt: "A serene corner of Kaivalyam Homestay in the Wayanad hills",
+                width: 285,
+                height: 187,
+              }}
+              fill
+              sizes="(min-width: 768px) 45vw, 100vw"
+              className="object-cover"
+              wrapperClassName="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border shadow-sm"
+            />
+          </div>
+
+          {/* Philosophy copy. */}
+          <div className="order-2">
+            <h2
+              id="philosophy-heading"
+              className="font-serif text-2xl font-semibold text-secondary md:text-3xl"
+            >
+              What is Kaivalyam?
+            </h2>
+            <div className="mt-4 flex flex-col gap-4">
+              <p className="max-w-prose text-base leading-relaxed text-on-surface">
+                <strong className="font-semibold text-secondary">
+                  Kaivalyam
+                </strong>{" "}
+                means liberation and solitude of the soul — a state of pure,
+                undisturbed stillness. It is the name we chose because it is
+                exactly what this place offers: a corner of the Wayanad hills
+                where the noise of the world falls away and you are left with
+                birdsong, pure unpolluted air, and time that is genuinely your
+                own.
+              </p>
+              <p className="max-w-prose text-base leading-relaxed text-on-surface">
+                Nestled in Padichira, about 10 km from Pulpally town, Kaivalyam
+                is a homestay built for long, unhurried stays. Whether you come
+                for a week or a month, you will find the same hospitable
+                welcome, home-cooked Malayali meals, and the quiet that the name
+                promises.
+              </p>
+            </div>
+            <div className="mt-6">
+              <SectionLink href="/about">Discover our story</SectionLink>
+            </div>
+          </div>
         </div>
       </div>
     </section>
